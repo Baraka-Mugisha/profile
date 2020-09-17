@@ -1,0 +1,37 @@
+# dependencies
+node_modules/
+
+*lock.json
+
+# IDEs and editors
+.vscode/*
+.settings/
+settings.json
+.editorconfig
+
+#misc and logs
+logs
+*.log
+npm-debug.log*
+yarn-error.log*
+yarn-debug.log*
+
+# compiled output
+dist/
+.DS_Store
+
+#dotenv environment variables
+.env
+.env.test
+
+# Optional npm cache directory
+.npm
+
+#coverage directory used by tools like istanbul
+coverage
+.coverage.yml
+*.lcov
+
+#nyc test coverage
+.nyc_output
+package.lock.json

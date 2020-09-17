@@ -1,0 +1,35 @@
+{
+  "name": "profile",
+  "version": "1.0.0",
+  "description": "my portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Baraka-Mugisha/profile.git"
+  },
+  "keywords": [
+    "profile"
+  ],
+  "author": "Jean Pierre Baraka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Baraka-Mugisha/profile/issues"
+  },
+  "homepage": "https://github.com/Baraka-Mugisha/profile#readme",
+  "dependencies": {
+    "config": "^3.3.1",
+    "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.8.1",
+    "express": "^4.17.1",
+    "helmet": "^4.1.1",
+    "mongoose": "^5.10.4",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4",
+    "pug": "^3.0.0"
+  }
+}
