@@ -23,11 +23,11 @@ if (app.get("env") === "development") {
     debug("morgan started...");
 }
 
-console.log(`Node_env: ${process.env.NODE_ENV}, or ${app.get("env")}`);
+// console.log(`Node_env: ${process.env.NODE_ENV}, or ${app.get("env")}`);
 
 app.get("/", (req, res) => {
-    // res.send("hello world");
-    res.render("index", { title: "My profile", message: "hello" });
+    res.send("hello world");
+    // res.render("index", { title: "My profile", message: "hello" });
 });
 
 app.get("/url", (req, res) => {
