@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER, ErrorHandler,} from '@angular/core';
+import * as Sentry from "@sentry/angular";
+import { Router } from "@angular/router";
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
@@ -42,7 +44,22 @@ import { HomeComponent } from './home/home.component';
       { path: '**', component: NotFoundComponent }
     ])
   ],
-  providers: [],
+  providers: [{
+    provide: ErrorHandler,
+    useValue: Sentry.createErrorHandler({
+      showDialog: true,
+    }),
+  },
+  {
+    provide: Sentry.TraceService,
+    deps: [Router],
+  },
+  {
+    provide: APP_INITIALIZER,
+    useFactory: () => () => {},
+    deps: [Sentry.TraceService],
+    multi: true,
+  },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
