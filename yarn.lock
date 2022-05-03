@@ -128,6 +128,15 @@
   dependencies:
     "tslib" "^2.3.0"
 
+"@angular/cdk@^13.0.0":
+  "integrity" "sha512-fA99fGgybup9ezyB/IzOa9Mk8g8LjejkqikLnC3mAeQ0lROOO7Vf9Rp1v7/ahe2lALTUbA1bzJeXzQYaffkIiA=="
+  "resolved" "https://registry.npmjs.org/@angular/cdk/-/cdk-13.3.5.tgz"
+  "version" "13.3.5"
+  dependencies:
+    "tslib" "^2.3.0"
+  optionalDependencies:
+    "parse5" "^5.0.0"
+
 "@angular/cli@~13.2.2":
   "integrity" "sha512-i9pBm5bVWnabwrsw1Ut84BqGu75+Nol6sReh8NTs7zUdCKNC00kqFBZg/1nGGw0IwL3Q+W7rJMgZ9q0qAtFTXg=="
   "resolved" "https://registry.npmjs.org/@angular/cli/-/cli-13.2.2.tgz"
@@ -153,7 +162,7 @@
     "symbol-observable" "4.0.0"
     "uuid" "8.3.2"
 
-"@angular/common@~13.2.2", "@angular/common@10.x || 11.x || 12.x || 13.x", "@angular/common@13.2.2":
+"@angular/common@^13.0.0", "@angular/common@^13.0.0 || ^14.0.0-0", "@angular/common@~13.2.2", "@angular/common@10.x || 11.x || 12.x || 13.x", "@angular/common@13.2.2":
   "integrity" "sha512-56C/bheNLKtTCyQUZCiYtKbBIZN9jj6rjFILPtJCGls3cBCxp7t9tIdoLiQG/wVQRmaxdj1ioLT+sCWz7mLtQw=="
   "resolved" "https://registry.npmjs.org/@angular/common/-/common-13.2.2.tgz"
   "version" "13.2.2"
@@ -188,7 +197,7 @@
   "resolved" "https://registry.npmjs.org/@angular/compiler/-/compiler-9.0.0.tgz"
   "version" "9.0.0"
 
-"@angular/core@~13.2.2", "@angular/core@10.x || 11.x || 12.x || 13.x", "@angular/core@13.2.2":
+"@angular/core@^13.0.0", "@angular/core@^13.0.0 || ^14.0.0-0", "@angular/core@~13.2.2", "@angular/core@10.x || 11.x || 12.x || 13.x", "@angular/core@13.2.2":
   "integrity" "sha512-zpctw0BxIVOsRFnckchK15SD1L8tzhf5GzwIDaM6+VylDQj1uYkm8mvAjJTQZyUuApomoFet2Rfj7XQPV+cNSQ=="
   "resolved" "https://registry.npmjs.org/@angular/core/-/core-13.2.2.tgz"
   "version" "13.2.2"
@@ -199,6 +208,13 @@
   "integrity" "sha512-6Pxgsrf0qF9iFFqmIcWmjJGkkCaCm6V5QNnxMy2KloO3SDq6QuMVRbN9RtC8Urmo25LP+eZ6ZgYqFYpdD8Hd9w=="
   "resolved" "https://registry.npmjs.org/@angular/core/-/core-9.0.0.tgz"
   "version" "9.0.0"
+
+"@angular/flex-layout@^13.0.0-beta.38":
+  "integrity" "sha512-kcWb7CcoHbvw7fjo/knizWVmSSmvaTnr8v1ML6zOdxu1PK9UPPOcOS8RTm6fy61zoC2LABivP1/6Z2jF5XfpdQ=="
+  "resolved" "https://registry.npmjs.org/@angular/flex-layout/-/flex-layout-13.0.0-beta.38.tgz"
+  "version" "13.0.0-beta.38"
+  dependencies:
+    "tslib" "^2.3.0"
 
 "@angular/forms@~13.2.2":
   "integrity" "sha512-T61W4Ay9X9qhxjc6lLqpNFeHrGKwg2mqdsZ3zIm/c7oKo37mgl9TB5kkrtnS+205r3N2hF4ICnGFZ4a/egUP/g=="
@@ -214,7 +230,7 @@
   dependencies:
     "tslib" "^2.3.0"
 
-"@angular/platform-browser@~13.2.2", "@angular/platform-browser@13.2.2":
+"@angular/platform-browser@^13.0.0", "@angular/platform-browser@~13.2.2", "@angular/platform-browser@13.2.2":
   "integrity" "sha512-M7gWC8fFCPc/CRcHCzqe/j7WzwAUMeKt9vwlK633XnesHBoqZdYgbb3YHHc6WPVU0YI09Nb/Hm5sezEKmjUmPg=="
   "resolved" "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-13.2.2.tgz"
   "version" "13.2.2"
@@ -5188,6 +5204,11 @@
   "version" "6.0.1"
   dependencies:
     "parse5" "^6.0.1"
+
+"parse5@^5.0.0":
+  "integrity" "sha512-ugq4DFI0Ptb+WWjAdOK16+u/nHfiIrcE+sh8kZMaM0WllQKLI9rOUq6c2b7cwPkXdzfQESqvoqK6ug7U/Yyzug=="
+  "resolved" "https://registry.npmjs.org/parse5/-/parse5-5.1.1.tgz"
+  "version" "5.1.1"
 
 "parse5@^6.0.1":
   "integrity" "sha512-Ofn/CTFzRGTTxwpNEs9PP93gXShHcTq255nzRYSKe8AkVpZY7e1fpmTfOyoIvjP5HG7Z2ZM7VS9PPhQGW2pOpw=="

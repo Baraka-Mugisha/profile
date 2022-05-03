@@ -1,0 +1,9 @@
+<div
+  fxLayoutAlign="start center"
+  [routerLink]="navItem.to"
+  routerLinkActive="active"
+  class="nav-bar-item"
+>
+  <img [src]="navItem.icon" [alt]="navItem.name" class="nav-icon" />
+  <span class="nav-text">{{ navItem.name }}</span>
+</div>

@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { NgModule, APP_INITIALIZER, ErrorHandler,} from '@angular/core';
 import * as Sentry from "@sentry/angular";
 import { Router } from "@angular/router";
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
@@ -15,6 +16,8 @@ import { ContactComponent } from './contact/contact.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
+import { NavBarItemComponent } from './nav-bar-item/nav-bar-item.component';
+
 
 @NgModule({
   declarations: [
@@ -28,10 +31,12 @@ import { HomeComponent } from './home/home.component';
     ContactComponent,
     NavBarComponent,
     NotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    NavBarItemComponent
   ],
   imports: [
     BrowserModule,
+    FlexLayoutModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'about', component: AboutComponent },
