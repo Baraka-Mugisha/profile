@@ -1,1 +1,50 @@
-<p>experience works!</p>
+<div
+  class="experience-container"
+  fxLayoutAlign="center flex-start"
+  id="experience"
+>
+  <div class="experience-contents" fxLayout="column" fxLayoutGap="20px">
+    <div class="portal-header">
+      <span class="portal-id">02.</span>
+      <span class="portal-header-title">Where I've worked</span>
+      <span class="portal-line"></span>
+    </div>
+    <div class="contents">
+      <div fxLayout="row">
+        <ul class="sider">
+          <li
+            class="sider-item"
+            [ngClass]="{ active: experience.isActive }"
+            *ngFor="let experience of experiences; trackBy: trackBy"
+            (click)="openTab(experience)"
+          >
+            {{ experience.company }}
+          </li>
+          <div
+            class="highlight"
+            [ngStyle]="{
+              transform: 'translateY(calc(' + highlighterPosition + '* 40px))'
+            }"
+          ></div>
+        </ul>
+        <div *ngFor="let experience of experiences; trackBy: trackBy">
+          <div class="right" *ngIf="experience.isActive">
+            <div fxLayout="column">
+              <div fxLayout="row" style="align-items: baseline">
+                <span class="role"> {{ experience.role }} </span>
+                <span> at </span>
+                <span class="company"> {{ experience.company }}</span>
+              </div>
+              <span class="timestamp">{{ experience.timestamp }}</span>
+            </div>
+            <ul class="duties" fxLayout="column" fxLayoutGap="10px">
+              <li class="duty" *ngFor="let duty of experience.duties">
+                {{ duty }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

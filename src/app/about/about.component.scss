@@ -1,0 +1,23 @@
+$primary: #0a192f;
+$secondary: #64f5e0;
+$light-slate: #a8b2d1;
+$lightest-slate: #ccd6f6;
+$lightest-navvy: #233554;
+
+.about-container {
+  padding: 50px 50px 50px 100px;
+}
+.mask {
+  img {
+    border-radius: 50%;
+    width: 380px;
+  }
+}
+
+.about-me {
+  width: 500px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  font-size: 1.2em;
+  line-height: 1.3em;
+}

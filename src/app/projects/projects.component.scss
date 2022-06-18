@@ -1,0 +1,29 @@
+.projects-container {
+  height: 100vh;
+  background-color: #dfedff;
+  padding: 20px 100px;
+}
+
+.project {
+  width: 300px;
+  max-height: 500px;
+  border: 2px solid rgb(68, 91, 97);
+  border-radius: 10px;
+  padding: 7px;
+}
+
+.project-stacks {
+  border-top: 1px solid #97a5d5;
+  padding: 10px 0px;
+}
+
+.tag {
+  border-radius: 3px;
+  padding: 5px;
+  background-color: #becdff;
+}
+
+.project-image {
+  width: 100%;
+  border-radius: 3px;
+}

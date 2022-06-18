@@ -1,0 +1,17 @@
+$primary: #64f5e0;
+$secondary: #0a192f;
+$light-slate: #a8b2d1;
+$lightest-slate: #ccd6f6;
+$lightest-navvy: #233554;
+
+.primary {
+  color: $primary;
+  padding: 12px 24px;
+  border: 1px solid $primary;
+  width: fit-content;
+  border-radius: 5px;
+}
+
+.secondary {
+  color: $secondary;
+}

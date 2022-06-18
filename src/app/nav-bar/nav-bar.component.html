@@ -1,6 +1,17 @@
 <div class="nav-bar" fxLayout="column" fxLayoutGap="5px">
-  <nav-bar-item
-    [navItem]="item"
+  <a
     *ngFor="let item of navBarItems"
-  ></nav-bar-item>
+    fxLayoutAlign="start center"
+    class="nav-bar-item"
+    href="#{{ item.name }}"
+    [fragment]="item.name"
+    [class.active]="(activeFragment | async) === item.name"
+    (mouseover)="onHover()"
+    (mouseleave)="onLeave()"
+    [class.hovered]="hover"
+
+  >
+    <img [src]="item.icon" [alt]="item.name" class="nav-icon" />
+    <span class="nav-text">{{ item.name }}</span>
+  </a>
 </div>

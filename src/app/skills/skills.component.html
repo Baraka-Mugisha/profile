@@ -1,1 +1,23 @@
-<p>skills works!</p>
+<div class="skills-container" id="skills">
+  <div class="portal-header">
+    <span class="portal-id">02.</span>
+    <span class="portal-header-title">Look what I can do</span>
+    <span class="portal-line"></span>
+  </div>
+  <div class="categories" fxLayoutGap="100px">
+    <span
+      *ngFor="let category of categories"
+      [ngClass]="{ active: category == activeTab }"
+      (click)="changeCategories(category)"
+      >{{ category }}</span
+    >
+  </div>
+  <div class="skill-tags">
+    <span
+      [@fade]="skill.tags.includes(activeTab)"
+      *ngFor="let skill of skills"
+      [ngClass]="{ activeSkill: skill.tags.includes(activeTab) }"
+      >{{ skill.name }}</span
+    >
+  </div>
+</div>

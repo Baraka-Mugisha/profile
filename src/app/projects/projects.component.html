@@ -1,1 +1,23 @@
-<p>projects works!</p>
+<div
+  class="projects-container"
+  id="projects"
+  fxLayout="row"
+  fxLayoutGap="20px"
+  (appear)="onAppear()"
+>
+  <div *ngFor="let project of projects" class="project" @fade>
+    <img
+      src="{{ project.image }}"
+      alt="{{ project.name }}"
+      class="project-image"
+      (mouseover)="onProjectHover($event)"
+    />
+    <div class="project-stacks">
+      <div class="tags" fxLayoutGap="5px">
+        <span *ngFor="let stack of project.stacks" class="tag">{{
+          stack
+        }}</span>
+      </div>
+    </div>
+  </div>
+</div>
