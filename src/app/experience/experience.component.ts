@@ -1,6 +1,8 @@
+import { fade } from '../animations/animation';
+import { ContentfulService } from './../services/contentful.service';
 import { Component, OnInit } from '@angular/core';
 import experience from '../data/resume/experience';
-import { EventEmitter } from '@angular/core';
+import { map, Observable } from 'rxjs';
 
 interface Experience {
   id: number;
@@ -17,26 +19,33 @@ interface Experience {
   selector: 'app-experience',
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss'],
+  animations: [fade],
 })
 export class ExperienceComponent implements OnInit {
-  constructor() {}
+  constructor(private contentful: ContentfulService) {}
 
-  experiences: Experience[] = experience;
+  experiences$: Observable<any[]>;
   highlighterPosition = 0;
 
   openTab(exp: Experience) {
-    this.experiences = this.experiences.map((item) => {
-      var isActive = (exp.id === item.id && true) || false;
-      this.highlighterPosition = exp.id - 1;
-      return {
-        ...item,
-        isActive,
-      };
-    });
+    this.experiences$ = this.experiences$.pipe(
+      map((items) =>
+        items.map((item, index) => {
+          var isActive = (exp.id === item.id && true) || false;
+          this.highlighterPosition = items.map((pos) => pos.id).indexOf(exp.id);
+          return {
+            ...item,
+            isActive,
+          };
+        })
+      )
+    );
   }
 
   trackBy(index, item) {
     return item ? item.id : undefined;
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.experiences$ = this.contentful.getContent('experience');
+  }
 }

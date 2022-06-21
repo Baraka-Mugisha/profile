@@ -1,9 +1,4 @@
-$primary: #0a192f;
-$secondary: #64f5e0;
-$slate: #8892b0;
-$light-slate: #a8b2d1;
-$lightest-slate: #ccd6f6;
-$lightest-navvy: #233554;
+@import "src/app/utilities/_variables.scss";
 
 .nav-bar {
   position: fixed;
@@ -26,10 +21,15 @@ a {
 }
 
 .nav-icon {
-  border-radius: 50%;
-  width: 25px;
+  width: 22px;
+}
+
+.nav-icon-container {
   background-color: $slate;
-  padding: 8px 8px 7px;
+  padding: 13px;
+  border-radius: 50%;
+  border: 1px solid $primary;
+  display: flex;
 }
 
 .nav-text {
@@ -46,7 +46,7 @@ a {
   letter-spacing: -10px;
 }
 
-.nav-icon:hover,
+.nav-icon-container:hover,
 .nav-text:hover {
   & + .nav-text{
     padding: 11px 15px 11px 24px;
@@ -60,15 +60,13 @@ a {
 }
 
 .active {
-  font-size: 20px;
-  transform: scale(1.1, 1.1);
   transition: 0.5s ease-in-out;
-  border: 1px solid $secondary;
   border-radius: 30px;
-  // .nav-icon,
-  // .nav-text,
-  // .nav-icon:hover + .nav-text {
-  //   background-color: $primary;
-  //   color: $lightest-slate;
-  // }
+  .nav-icon-container {
+    background-color: $primary;
+    border: 1px solid $secondary;
+    img {
+      filter: $toSecondary
+    }
+  }
 }

@@ -1,5 +1,6 @@
 <div class="skills-container" id="skills">
   <div class="portal-header">
+    <span class="portal-line"></span>
     <span class="portal-id">02.</span>
     <span class="portal-header-title">Look what I can do</span>
     <span class="portal-line"></span>
@@ -12,10 +13,10 @@
       >{{ category }}</span
     >
   </div>
-  <div class="skill-tags">
+  <div class="skill-tags" *ngIf="skills$ | async as skills">
     <span
-      [@fade]="skill.tags.includes(activeTab)"
       *ngFor="let skill of skills"
+      [@fade]="skill.tags.includes(activeTab)"
       [ngClass]="{ activeSkill: skill.tags.includes(activeTab) }"
       >{{ skill.name }}</span
     >

@@ -1,13 +1,11 @@
-$primary: #0a192f;
-$secondary: #64f5e0;
-$light-slate: #a8b2d1;
-$lightest-slate: #ccd6f6;
-$lightest-navvy: #233554;
+@import "src/app/utilities/_variables.scss";
 
 .skills-container {
   padding: 50px 50px 50px 100px;
 
   .categories {
+    display: flex;
+    justify-content: center;
     span {
       font-size: 1.2em;
       text-transform: capitalize;
@@ -33,7 +31,7 @@ $lightest-navvy: #233554;
     }
     span {
       border-radius: 20px;
-      border: 1px solid #a8b2d1;
+      border: 1px solid $secondary;
       padding: 10px 20px;
     }
   }

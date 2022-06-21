@@ -1,9 +1,11 @@
-<div
+<a
   class="button"
   [ngClass]="{
     primary: type == 'primary',
     secondary: type == 'secondary'
   }"
+  href="{{ href }}"
+  target="_blank"
 >
   {{ text }}
-</div>
+</a>

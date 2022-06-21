@@ -1,4 +1,57 @@
+@import "src/app/utilities/_variables.scss";
+
 .contact-container {
-  height: 100vh;
-  background-color: rgb(221, 218, 168);
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  min-height: 80vh;
+  padding: 50px 100px;
+  margin: auto;
+}
+
+.body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  flex: 1;
+}
+
+h1 {
+  font-size: 48px;
+  color: $secondary;
+}
+
+p {
+  line-height: 1.5em;
+  font-size: 16px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.footnote {
+  position: absolute;
+  bottom: 10px;
+  font-size: 14px;
+}
+
+.social-contacts {
+  margin-top: 40px;
+  a {
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 50%;
+    // background-color: $slate;
+    border: 1px solid $secondary;
+    display: inline-flex;
+    margin: 10px;
+    transition: 0.3s;
+    img {
+      width: 20px;
+      height: 20px;
+    }
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
 }

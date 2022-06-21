@@ -6,12 +6,8 @@
     href="#{{ item.name }}"
     [fragment]="item.name"
     [class.active]="(activeFragment | async) === item.name"
-    (mouseover)="onHover()"
-    (mouseleave)="onLeave()"
-    [class.hovered]="hover"
-
   >
-    <img [src]="item.icon" [alt]="item.name" class="nav-icon" />
+    <div class="nav-icon-container"><img [src]="item.icon" [alt]="item.name" class="nav-icon" /></div>
     <span class="nav-text">{{ item.name }}</span>
   </a>
 </div>

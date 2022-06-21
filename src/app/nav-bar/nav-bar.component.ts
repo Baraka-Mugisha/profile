@@ -23,13 +23,4 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
     this.navBarItems = this.service.getAll();
   }
-
-  @Input() hover: boolean = false;
-
-  onHover() {
-    this.hover = true;
-  }
-  onLeave() {
-    this.hover = false;
-  }
 }

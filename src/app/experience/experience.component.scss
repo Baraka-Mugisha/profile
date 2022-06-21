@@ -1,13 +1,11 @@
-$primary: #0a192f;
-$secondary: #64f5e0;
-$light-slate: #a8b2d1;
-$lightest-slate: #ccd6f6;
-$lightest-navvy: #233554;
+@import "src/app/utilities/_variables.scss";
 
 $tab-height: 20px;
 .experience-container {
-  height: 100vh;
   padding: 50px 50px 50px 100px;
+  display: flex;
+  min-height: 65vh;
+  justify-content: center;
 }
 
 .experience-contents {
@@ -17,16 +15,12 @@ $tab-height: 20px;
 }
 
 .right {
-  padding: 30px;
+  padding: 10px 30px;
 }
 
 ul {
   list-style-type: none;
   padding: 0;
-}
-
-.duty {
-  width: 400px;
 }
 
 .sider-item {
@@ -53,12 +47,14 @@ ul {
 }
 
 .role {
-  font-size: 28px;
+  font-size: 22px;
+  color: $lightest-slate;
 }
 
 .company {
-  font-size: 30px;
+  font-size: 24px;
   color: $secondary;
+  text-decoration: none;
 }
 
 .timestamp {
@@ -67,4 +63,17 @@ ul {
 
 .sider {
   position: relative;
+}
+
+.duty {
+  color: $slate;
+  width: 500px;
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.bullet {
+  width: 10px;
 }

@@ -1,29 +1,91 @@
+@import "src/app/utilities/_variables.scss";
+
 .projects-container {
-  height: 100vh;
-  background-color: #dfedff;
-  padding: 20px 100px;
+  padding: 50px 50px 50px 150px;
+}
+
+.projects-content {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .project {
-  width: 300px;
-  max-height: 500px;
-  border: 2px solid rgb(68, 91, 97);
   border-radius: 10px;
-  padding: 7px;
+  position: relative;
+  overflow: hidden;
+  height: fit-content;
 }
 
-.project-stacks {
-  border-top: 1px solid #97a5d5;
-  padding: 10px 0px;
-}
-
-.tag {
-  border-radius: 3px;
-  padding: 5px;
-  background-color: #becdff;
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  gap: 5px 10px;
+  font-size: 0.9em;
+  span {
+    border-radius: 20px;
+    border: 1px solid $secondary;
+    padding: 5px 10px;
+    color: $lightest-slate;
+  }
 }
 
 .project-image {
   width: 100%;
   border-radius: 3px;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  span {
+    font-size: 1.2em;
+    text-transform: capitalize;
+    cursor: pointer;
+    display: inline-block;
+    color: $slate;
+  }
+}
+
+.active {
+  color: $secondary !important;
+}
+
+.project-description {
+  background: linear-gradient(
+    181deg,
+    rgb(255 255 255 / 0%) 0%,
+    rgb(0 0 0 / 51%) 64.06%,
+    rgb(0 0 0 / 67%) 93.23%
+  );
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  place-content: flex-end;
+  display: flex;
+  height: 50%;
+  padding: 10px;
+
+  .project-title {
+    color: white;
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  .project-details {
+    color: $lightest-slate;
+    font-size: 14px;
+  }
+}
+
+.mobile {
+  max-width: 300px;
+}
+
+.web {
+  max-width: 1024px;
 }

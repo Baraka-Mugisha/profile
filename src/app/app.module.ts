@@ -18,8 +18,6 @@ import { ContactComponent } from './contact/contact.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
-import { NavBarItemComponent } from './nav-bar-item/nav-bar-item.component';
-import { FooterComponent } from './footer/footer.component';
 import { ButtonComponent } from './button/button.component';
 
 const routerOptions: ExtraOptions = {
@@ -41,8 +39,6 @@ const routerOptions: ExtraOptions = {
     NavBarComponent,
     NotFoundComponent,
     HomeComponent,
-    NavBarItemComponent,
-    FooterComponent,
     AppearDirective,
     ButtonComponent,
   ],

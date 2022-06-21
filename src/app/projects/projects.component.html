@@ -1,23 +1,58 @@
 <div
   class="projects-container"
   id="projects"
-  fxLayout="row"
   fxLayoutGap="20px"
   (appear)="onAppear()"
 >
-  <div *ngFor="let project of projects" class="project" @fade>
-    <img
-      src="{{ project.image }}"
-      alt="{{ project.name }}"
-      class="project-image"
-      (mouseover)="onProjectHover($event)"
-    />
-    <div class="project-stacks">
-      <div class="tags" fxLayoutGap="5px">
-        <span *ngFor="let stack of project.stacks" class="tag">{{
-          stack
-        }}</span>
+  <div class="portal-header">
+    <span class="portal-line"></span>
+    <span class="portal-id">04.</span>
+    <span class="portal-header-title">Projects</span>
+    <span class="portal-line"></span>
+  </div>
+  <div class="categories" fxLayoutGap="100px">
+    <span
+      *ngFor="let category of categories"
+      [ngClass]="{ active: category == activeTab }"
+      (click)="changeCategories(category)"
+      >{{ category }}</span
+    >
+  </div>
+  <div class="projects-content">
+    <ng-container *ngFor="let project of projects">
+      <div
+        @slideInOut
+        *ngIf="project.tags.includes(activeTab)"
+        class="project"
+        [ngClass]="{
+          web: project.tags.includes('web'),
+          mobile: project.tags.includes('mobile'),
+          activeProject: project.tags.includes(activeTab)
+        }"
+        (mouseenter)="onProjectHover($event, project)"
+        (mouseleave)="onProjectLeave($event, project)"
+      >
+        <img
+          src="{{
+            (hovered?.id == project.id && project?.demo) || project.image
+          }}"
+          alt="{{ project.name }}"
+          class="project-image"
+        />
+        <div
+          @fade
+          class="project-description"
+          *ngIf="hovered?.id == project.id"
+        >
+          <div class="project-title">{{ project.name }}</div>
+          <div class="project-details">{{ project.summary }}</div>
+          <div class="tags">
+            <span *ngFor="let stack of project.stacks" class="tag">{{
+              stack
+            }}</span>
+          </div>
+        </div>
       </div>
-    </div>
+    </ng-container>
   </div>
 </div>
