@@ -1,15 +1,12 @@
-<div
-  class="experience-container"
-  fxLayoutAlign="center flex-start"
-  id="experience"
->
+<div class="experience-container" id="experience">
   <div class="experience-contents" fxLayout="column" fxLayoutGap="20px">
     <div class="portal-header">
-      <span class="portal-id">02.</span>
+      <span class="portal-line"></span>
+      <span class="portal-id">03.</span>
       <span class="portal-header-title">Where I've worked</span>
       <span class="portal-line"></span>
     </div>
-    <div class="contents">
+    <div class="contents" *ngIf="experiences$ | async as experiences">
       <div fxLayout="row">
         <ul class="sider">
           <li
@@ -32,14 +29,17 @@
             <div fxLayout="column">
               <div fxLayout="row" style="align-items: baseline">
                 <span class="role"> {{ experience.role }} </span>
-                <span> at </span>
-                <span class="company"> {{ experience.company }}</span>
+                <span> &nbsp; at &nbsp; </span>
+                <a class="company" href="{{ experience.companySite }}">
+                  {{ experience.company }}</a
+                >
               </div>
               <span class="timestamp">{{ experience.timestamp }}</span>
             </div>
-            <ul class="duties" fxLayout="column" fxLayoutGap="10px">
+            <ul @fade class="duties" fxLayout="column" fxLayoutGap="10px">
               <li class="duty" *ngFor="let duty of experience.duties">
-                {{ duty }}
+                <img class="bullet" src="../../assets/bullet.svg" alt="bullet" />
+                <span>{{ duty }}</span>
               </li>
             </ul>
           </div>

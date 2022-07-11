@@ -30,19 +30,18 @@ const navBarItems: Item[] = [
     to: '/projects',
     icon: '../../assets/nav/rocket-3426.svg',
   },
-
-  {
-    id: 5,
-    name: 'licenses',
-    to: '/licenses',
-    icon: '../../assets/nav/bookmark-7799.svg',
-  },
-  {
-    id: 6,
-    name: 'education',
-    to: '/education',
-    icon: '../../assets/nav/graduation-cap-5404.svg',
-  },
+  // {
+  //   id: 5,
+  //   name: 'licenses',
+  //   to: '/licenses',
+  //   icon: '../../assets/nav/bookmark-7799.svg',
+  // },
+  // {
+  //   id: 6,
+  //   name: 'education',
+  //   to: '/education',
+  //   icon: '../../assets/nav/graduation-cap-5404.svg',
+  // },
   {
     id: 7,
     name: 'contact',

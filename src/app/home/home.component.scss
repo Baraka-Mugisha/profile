@@ -1,9 +1,4 @@
-$primary: #0a192f;
-$secondary: #64f5e0;
-$slate: #8892b0;
-$light-slate: #a8b2d1;
-$lightest-slate: #ccd6f6;
-$lightest-navvy: #233554;
+@import "src/app/utilities/_variables.scss";
 
 .home-content {
   padding: 50px 50px 50px 150px;
@@ -13,6 +8,7 @@ $lightest-navvy: #233554;
   margin: 0;
   color: $secondary;
   max-width: 75%;
+  margin-left: 15px;
 }
 
 .headline {
@@ -23,8 +19,8 @@ $lightest-navvy: #233554;
 
 .summary {
   max-width: 600px;
-  line-height: 1.8rem;
-  font-size: 1.4rem;
+  line-height: 1.4rem;
+  font-size: 1rem;
 }
 
 .hi {
@@ -32,12 +28,22 @@ $lightest-navvy: #233554;
 }
 
 .logo {
-  color: #00bcd4;
-  font-size: 40px;
-  font-weight: 700;
+  position: fixed;
+  transition: 0.2s;
+  color: $secondary;
+  font-family: "Titan One", cursive;
+  text-decoration: none;
+  font-size: 28px;
+  &:hover {
+    width: 57px;
+  }
 }
 
 #home {
   padding-left: 20px;
   padding-top: 20px;
+}
+
+.resume {
+  margin-top: 30px;
 }

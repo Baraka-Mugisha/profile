@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "docs",
+            "outputPath": "dist",
             "index": "src/index.html",
             "inlineStyleLanguage": "scss",
             "main": "src/main.ts",
@@ -38,7 +38,6 @@
               ],
               "optimization": true,
               "outputHashing": "all",
-              "sourceMap": false,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -54,7 +53,11 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "sourceMap": {
+                "scripts": true,
+                "hidden": true
+              }
             }
           }
         },

@@ -1,6 +1,8 @@
+import { Observable } from 'rxjs';
+import { ContentfulService } from './../services/contentful.service';
 import { Component, OnInit } from '@angular/core';
 import skills from 'src/app/data/resume/skills';
-// import { fade } from '../animation';
+// import { fade } from '../animations/animation';
 import {
   style,
   transition,
@@ -16,17 +18,16 @@ import {
   animations: [
     trigger('fade', [
       state('false', style({ background: 'none' })),
-      state('true', style({ background: '#64f5e0' })),
+      state('true', style({ background: '$secondary' })),
       transition('false => true', animate(500)),
       transition('true => false', animate(500)),
     ]),
   ],
 })
 export class SkillsComponent implements OnInit {
+  constructor(private contentful: ContentfulService) {}
 
-  constructor() { }
-
-  skills = skills;
+  skills$: Observable<any>;
   activeTab = 'all';
   categories = ['all', 'frontend', 'backend', 'mobile', 'devops', 'design'];
   // fadeTrigger = false;
@@ -36,6 +37,6 @@ export class SkillsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.skills$ = this.contentful.getContent('skills');
   }
-
 }

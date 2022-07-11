@@ -1,11 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 // @import url("./app/colors.scss");
-
-$primary: #0a192f;
-$secondary: #64f5e0;
-$light-slate: #a8b2d1;
-$lightest-slate: #ccd6f6;
-$lightest-navvy: #233554;
+@import "src/app/utilities/_variables.scss";
 
 html {
   scroll-behavior: smooth;
@@ -17,6 +12,10 @@ html {
 
 .secondary {
   color: $secondary;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 body {
@@ -32,22 +31,26 @@ body {
   flex-direction: row;
   align-items: center;
   gap: 5px;
+  margin-bottom: 30px;
+  justify-content: center;
 
   .portal-id {
     font-size: 20px;
     counter-increment: section 1;
     font-weight: 400;
     color: $secondary;
+    margin-left: 20px;
   }
 
   .portal-header-title {
     color: $lightest-slate;
     font-size: clamp(26px, 5vw, 32px);
+    margin-right: 20px;
   }
 
   .portal-line {
     height: 1px;
-    width: 300px;
+    width: 200px;
     background-color: $lightest-navvy;
     display: block;
   }

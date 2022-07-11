@@ -1,25 +1,43 @@
 interface Project {
   id: Number;
   name: String;
+  summary: String;
+  about: String;
   image: String;
-  altImage: String;
+  demo?: String;
   stacks: String[];
+  tags: String[];
+  website?: String;
+  github?: String;
+  design?: String;
 }
 
 const navBarItems: Project[] = [
   {
     id: 1,
     name: 'Pure Fruit',
+    summary: 'A collection of deliverables',
+    about:
+      'A collection of fruit deliverables available at youe doorstep anytime you want',
     image: '../../assets/me.png',
-    altImage: '../../assets/loader.gif',
     stacks: ['React', 'React Native', 'Angular'],
+    tags: ['all', 'design', 'mobile'],
+    website: 'www.webly.web',
+    github: 'github/keem',
+    design: 'www.design.com',
   },
   {
     id: 2,
     name: 'Pure Fruit',
-    image: '../../assets/me.png',
-    altImage: '../../assets/loader.gif',
+    summary: 'A collection of deliverables',
+    about:
+      'A collection of fruit deliverables available at youe doorstep anytime you want',
+    image: '../../../assets/phone.jpg',
+    demo: '../../../assets/phone.gif',
     stacks: ['React', 'React Native', 'Angular'],
+    tags: ['all', 'web'],
+    website: 'www.webly.web',
+    github: 'github/keem',
   },
 ];
 

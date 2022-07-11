@@ -12,4 +12,5 @@ export class ButtonComponent implements OnInit {
 
   @Input() type: string;
   @Input() text: string;
+  @Input() href: string;
 }
