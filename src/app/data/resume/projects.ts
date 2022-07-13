@@ -39,6 +39,19 @@ const navBarItems: Project[] = [
     website: 'www.webly.web',
     github: 'github/keem',
   },
+  {
+    id: 3,
+    name: 'Pure Fruit',
+    summary: 'A collection of deliverables',
+    about:
+      'A collection of fruit deliverables available at youe doorstep anytime you want',
+    image: '../../../assets/phone.jpg',
+    demo: '../../../assets/phone.gif',
+    stacks: ['React', 'React Native', 'Angular'],
+    tags: ['all', 'web', 'design'],
+    website: 'www.webly.web',
+    github: 'github/keem',
+  },
 ];
 
 export default navBarItems;
