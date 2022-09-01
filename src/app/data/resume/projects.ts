@@ -9,48 +9,53 @@ interface Project {
   tags: String[];
   website?: String;
   github?: String;
-  design?: String;
+  dribbble?: String;
+  figma?: String;
 }
 
 const navBarItems: Project[] = [
   {
     id: 1,
-    name: 'Pure Fruit',
-    summary: 'A collection of deliverables',
-    about:
+    name: 'Pure Dribbble',
+    summary:
       'A collection of fruit deliverables available at youe doorstep anytime you want',
+    about:
+      'A collection of fruit deliverables available at youe j \n\n A collection of fruit deliverables available at youe doorstep anytime you want.       . A collection of fruit deliverables available at youe doorstep anytime you want. A collection of fruit deliverables available at youe doorstep anytime you want sA collection of fruit deliverables available at youe doorstep anytime you want',
     image: '../../assets/me.png',
     stacks: ['React', 'React Native', 'Angular'],
     tags: ['all', 'design', 'mobile'],
-    website: 'www.webly.web',
-    github: 'github/keem',
-    design: 'www.design.com',
+    website: 'https://www.webly.web',
+    github: 'https://www.github/keem',
+    dribbble: 'https://www.design.com',
   },
   {
     id: 2,
     name: 'Pure Fruit',
-    summary: 'A collection of deliverables',
+    summary:
+      'A collection of fruit deliverables available at youe doorstep anytime you want',
     about:
       'A collection of fruit deliverables available at youe doorstep anytime you want',
     image: '../../../assets/phone.jpg',
     demo: '../../../assets/phone.gif',
     stacks: ['React', 'React Native', 'Angular'],
     tags: ['all', 'web'],
-    website: 'www.webly.web',
-    github: 'github/keem',
+    website: 'https://www.webly.web',
+    github: 'https://www.github/keem',
   },
   {
     id: 3,
-    name: 'Pure Fruit',
-    summary: 'A collection of deliverables',
+    name: 'Pure Figma',
+    summary:
+      'A collection of fruit deliverables available at youe doorstep anytime you want',
     about:
       'A collection of fruit deliverables available at youe doorstep anytime you want',
     image: '../../../assets/phone.jpg',
     demo: '../../../assets/phone.gif',
     stacks: ['React', 'React Native', 'Angular'],
-    tags: ['all', 'web', 'design'],
-    website: 'www.webly.web',
-    github: 'github/keem',
+    tags: ['all', 'web'],
+    website: 'https://www.webly.web',
+    github: 'https://www.github/keem',
+    figma: 'https://www.figma/keem',
   },
 ];
 

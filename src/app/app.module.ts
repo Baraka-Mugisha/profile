@@ -19,6 +19,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 import { ButtonComponent } from './button/button.component';
+import { linebreakPipe } from './linebreak.pipe';
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
@@ -41,6 +42,7 @@ const routerOptions: ExtraOptions = {
     HomeComponent,
     AppearDirective,
     ButtonComponent,
+    linebreakPipe,
   ],
   imports: [
     BrowserModule,
