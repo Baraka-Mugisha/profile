@@ -1,6 +1,7 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import projects from '../data/resume/projects';
+import { ContentfulService } from './../services/contentful.service';
+import { map, Observable } from 'rxjs';
 
 interface Project {
   id: Number;
@@ -41,19 +42,21 @@ interface Project {
   ],
 })
 export class ProjectsComponent implements OnInit {
-  constructor() {}
-  projects: Project[] = projects;
+  constructor(private contentful: ContentfulService) {}
+  projects$: Observable<any[]>;
 
   activeTab = 'all';
   categories = ['all', 'web', 'mobile', 'design'];
   // fadeTrigger = false;
   hovered: {};
+  expandedProject: any;
 
-  onProjectHover($event, project) {
-    this.hovered = project
+  onProjectHover($event, project: Project) {
+    this.hovered = project;
   }
-  onProjectLeave($event, project) {
-    this.hovered = {}
+  onProjectLeave($event, project: Project) {
+    this.hovered = {};
+    this.expandedProject = null;
   }
   hasAppeared: boolean = false;
   onAppear() {
@@ -65,5 +68,12 @@ export class ProjectsComponent implements OnInit {
     this.activeTab = category;
   }
 
-  ngOnInit(): void {}
+  setExpanded(project: Project) {
+    if (this.expandedProject === project.id) this.expandedProject = null;
+    else this.expandedProject = project.id;
+  }
+
+  ngOnInit(): void {
+    this.projects$ = this.contentful.getContent('projects');
+  }
 }

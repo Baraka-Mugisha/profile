@@ -26,7 +26,7 @@ export class ContentfulService {
       .pipe(map((res) => res.items))
       .pipe(
         map((items) =>
-          items.map((item) => {
+          items.map((item: any) => {
             var fields: Object = item.fields;
             return { ...fields, id: item.sys.id };
           })

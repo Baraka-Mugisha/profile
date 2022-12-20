@@ -5,35 +5,26 @@
 }
 
 .projects-content {
+  margin: auto;
   margin-top: 30px;
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 26px;
+  width: calc(100% - 200px);
 }
 
 .project {
-  border-radius: 10px;
+  border-radius: 20px;
   position: relative;
   overflow: hidden;
-  height: fit-content;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 10px;
-  gap: 5px 10px;
-  font-size: 0.9em;
-  span {
-    border-radius: 20px;
-    border: 1px solid $secondary;
-    padding: 5px 10px;
-    color: $lightest-slate;
-  }
+  width: 430px;
+  height: 400px;
+  // flex: 1 1 calc(50% - 300px);
 }
 
 .project-image {
   width: 100%;
+  height: inherit;
   border-radius: 3px;
 }
 
@@ -67,25 +58,110 @@
   flex-direction: column;
   place-content: flex-end;
   display: flex;
-  height: 50%;
-  padding: 10px;
+  height: 60%;
+  padding: 30px 15px;
+  transition: .3s ease-in-out;
 
-  .project-title {
-    color: white;
-    font-weight: 700;
-    font-size: 24px;
+  .project-header {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+
+    .project-title {
+      color: $secondary;
+      font-weight: 700;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .links {
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .icon {
+      filter: $toSecondary;
+      transition: 0.2s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        filter: $toMain;
+      }
+    }
   }
 
   .project-details {
     color: $lightest-slate;
     font-size: 14px;
   }
+  .learn-more {
+    transition: 0.3s ease-in-out;
+    float: right;
+    right: 0;
+    font-weight: 600;
+    cursor: pointer;
+    &:hover {
+      color: $main;
+    }
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 5px 10px;
+    font-size: 12px;
+    span {
+      border-radius: 20px;
+      border: 1px solid $secondary;
+      padding: 5px 20px;
+      color: $lightest-slate;
+    }
+  }
 }
 
-.mobile {
-  max-width: 300px;
+.cover_all {
+  background: rgb(10 25 47 / 83%);
+  height: 100%;
+  transition: .3s ease-in-out;
 }
 
-.web {
-  max-width: 1024px;
+// .mobile {
+//   max-width: 300px;
+// }
+
+// .web {
+//   max-width: 1024px;
+// }
+
+.corners {
+  border: 0px solid $secondary;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  z-index: 1;
+
+  &--first {
+    border-width: 4px 0 0 4px;
+    top: 0;
+    left: 0;
+    border-radius: 100% 0 0;
+  }
+  &--second {
+    border-width: 0px 0px 4px 4px;
+    bottom: 0;
+    left: 0;
+    border-radius: 0 0 0 100%;
+  }
+  &--third {
+    border-width: 4px 4px 0px 0px;
+    top: 0;
+    right: 0;
+    border-radius: 0 100% 0;
+  }
+  &--fourth {
+    border-width: 0 4px 4px 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 0 0 100%;
+  }
 }
