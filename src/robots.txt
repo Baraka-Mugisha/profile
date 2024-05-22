@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /private/
 Allow: /
-Sitemap: https://bakeem.onrender.com/
+Sitemap: https://www.yourdomain.com/sitemap.xml
