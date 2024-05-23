@@ -16,7 +16,7 @@
       [ngClass]="{ active: category == activeTab }"
       (click)="changeCategories(category)"
       >{{ category }}</span
-    > 
+    >
   </div>
   <div class="projects-content">
     <ng-container *ngFor="let project of projects$ | async as projects">
@@ -69,7 +69,7 @@
             <div class="project-title">{{ project.name }}</div>
             <div class="links">
               <div class="website">
-                <a href="{{ project.website }}" target="_blank"
+                <a [attr.href]="project.website" target="_blank"
                   ><img
                     src="../../assets/ri-external-link-line.svg"
                     alt="website"
@@ -82,21 +82,21 @@
                   alt="view demo"
                   class="icon"
                 />
-                <a href="{{ project.github }}" target="_blank"
+                <a [attr.href]="project.github" target="_blank"
                   ><img
                     *ngIf="project.github"
                     src="../../assets/ri-github-fill.svg"
                     alt="github"
                     class="icon"
                 /></a>
-                <a href="{{ project.figma }}" target="_blank"
+                <a [attr.href]="project.figma" target="_blank"
                   ><img
                     *ngIf="project.figma"
                     src="../../assets/Figma.svg"
                     alt="figma"
                     class="icon"
                 /></a>
-                <a href="{{ project.dribbble }}" target="_blank"
+                <a [attr.href]="project.dribbble" target="_blank"
                   ><img
                     *ngIf="project.dribbble"
                     src="../../assets/ri-dribbble-line.svg"
