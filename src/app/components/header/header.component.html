@@ -1,0 +1,33 @@
+<header id="header" class="fixed top-8 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-[120rem] px-6 py-4 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-2xl border border-[var(--stroke-elements)] rounded-2xl z-[1000] flex justify-between items-center transition-all">
+  <!-- Navigation Menu -->
+  <nav id="menu">
+    <ul class="flex gap-3 list-none m-0 p-0">
+      <li *ngFor="let item of menuItems">
+        <a class="flex items-center gap-2 px-4 py-2 text-base font-medium rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors" [href]="item.href">
+          <span class="hidden md:inline">{{ item.caption }}</span>
+          <i [class]="item.icon"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Header Controls -->
+  <div class="flex gap-3 items-center">
+    <button 
+      id="color-switcher"
+      class="flex items-center justify-center px-4 py-2 text-base font-medium rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+      type="button"
+      role="switch"
+      [attr.aria-label]="currentTheme + ' mode'"
+      [attr.aria-checked]="currentTheme === 'dark'"
+      (click)="onThemeToggle()">
+      <i [class]="currentTheme === 'dark' ? 'ph-bold ph-sun' : 'ph-bold ph-moon'"></i>
+    </button>
+    <a 
+      id="notify-trigger"
+      class="flex items-center gap-2 px-4 py-2 text-base font-medium rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+      href="mailto:hello@alexwalker.com?subject=Message%20from%20your%20site">
+      <span class="hidden md:inline">Let's Talk</span>
+      <i class="ph-bold ph-chat-dots"></i>
+    </a>
+  </div>
+</header>

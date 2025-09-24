@@ -1,0 +1,34 @@
+<div id="app-container" [attr.data-theme]="currentTheme()">
+  <!-- <app-loader /> -->
+  <!-- Header -->
+  <app-header (themeToggled)="toggleTheme()" [currentTheme]="currentTheme()" />
+  <!-- Background -->
+  <app-background />
+  <!-- Avatar Sidebar (Desktop only) -->
+  <app-avatar-sidebar />
+  <!-- Main content wrapper -->
+  <div class="content">
+    <div class="content__wrapper">
+      <!-- Hero Section -->
+      <div class="content__block block-large" id="home">
+        <app-hero />
+      </div>
+      <!-- Portfolio Section -->
+      <div class="content__block block-grid-large" id="works">
+        <app-portfolio />
+      </div>
+      <!-- About Section -->
+      <div class="content__block block-large" id="about">
+        <app-about />
+      </div>
+      <!-- Resume Section -->
+      <div class="content__block block-large" id="resume">
+        <app-resume />
+      </div>
+      <!-- Contact Section -->
+      <div class="content__block" id="contact">
+        <app-contact />
+      </div>
+    </div>
+  </div>
+</div>

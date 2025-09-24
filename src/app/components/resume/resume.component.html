@@ -1,0 +1,29 @@
+<section class="py-20 px-4 max-w-5xl mx-auto">
+  <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-8">Resume</h2>
+  <div class="grid md:grid-cols-2 gap-8">
+    <div>
+      <h3 class="text-xl font-semibold text-blue-500 mb-4">Experience</h3>
+      <ul class="space-y-4">
+        <li *ngFor="let exp of experience" class="bg-white dark:bg-neutral-800 rounded-xl shadow p-6">
+          <div class="flex justify-between items-center mb-2">
+            <span class="font-bold text-neutral-900 dark:text-white">{{ exp.role }}</span>
+            <span class="text-sm text-neutral-500 dark:text-neutral-400">{{ exp.period }}</span>
+          </div>
+          <div class="text-neutral-700 dark:text-neutral-300">{{ exp.company }}</div>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-xl font-semibold text-blue-500 mb-4">Education</h3>
+      <ul class="space-y-4">
+        <li *ngFor="let edu of education" class="bg-white dark:bg-neutral-800 rounded-xl shadow p-6">
+          <div class="flex justify-between items-center mb-2">
+            <span class="font-bold text-neutral-900 dark:text-white">{{ edu.degree }}</span>
+            <span class="text-sm text-neutral-500 dark:text-neutral-400">{{ edu.period }}</span>
+          </div>
+          <div class="text-neutral-700 dark:text-neutral-300">{{ edu.school }}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

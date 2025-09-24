@@ -1,0 +1,58 @@
+/* Main App Styles */
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.content__wrapper {
+  position: relative;
+}
+
+/* Adjust main content when avatar sidebar is present */
+@media (min-width: 1200px) {
+  .content {
+    margin-left: 36rem;
+  }
+}
+
+/* Global content block styles */
+.content__block {
+  margin-bottom: 6rem;
+}
+
+.content__block.block-large {
+  margin-bottom: 8rem;
+}
+
+.content__block.block-grid-large {
+  margin-bottom: 10rem;
+}
+
+.grid-block {
+  max-width: 120rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2rem;
+}
+
+@media (min-width: 1200px) {
+  .grid-block {
+    padding: 0 4rem;
+  }
+}
+
+/* Section styles */
+.inner {
+  padding: 8rem 0;
+  position: relative;
+}
+
+.inner.inner-first {
+  padding-top: 12rem; /* Extra space for header */
+}
+
+/* Theme transition */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
