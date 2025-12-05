@@ -1,14 +1,14 @@
 {
-  "name": "angular-portfolio",
+  "name": "profile",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "dev": "ng serve -o",
-    "start": "ng serve",
+    "start": "node dist/server/server.mjs",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:angular-portfolio": "node dist/angular-portfolio/server/server.mjs"
+    "serve:ssr": "node dist/server/server.mjs"
   },
   "prettier": {
     "printWidth": 100,

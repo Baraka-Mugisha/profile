@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "angular-portfolio": {
+    "profile": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -29,9 +29,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "styles": ["src/styles.scss"],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
@@ -66,10 +64,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-portfolio:build:production"
+              "buildTarget": "build:production"
             },
             "development": {
-              "buildTarget": "angular-portfolio:build:development"
+              "buildTarget": "build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,9 +86,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.scss"
-            ]
+            "styles": ["src/styles.scss"]
           }
         }
       }
