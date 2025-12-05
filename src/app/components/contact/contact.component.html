@@ -1,22 +1,186 @@
-<section class="py-20 px-4 max-w-5xl mx-auto">
-  <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-8">Contact</h2>
-  <form class="bg-white dark:bg-neutral-800 rounded-xl shadow p-8 max-w-xl mx-auto flex flex-col gap-6" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-    <div>
-      <label class="block text-neutral-700 dark:text-neutral-200 font-semibold mb-2">Name</label>
-      <input type="text" formControlName="name" class="w-full px-4 py-2 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
-      <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="text-red-500 text-sm mt-1">Name is required.</div>
+<section id="contact" class="inner py-24 md:py-40 lg:py-48">
+  <div class="content__block mx-auto">
+    <p
+      class="h2__subtitle animate-in-up flex gap-2 items-center btn !text-xs md:!text-sm !py-2 md:!py-3 !px-4 md:!px-5"
+    >
+      <i class="fa-solid fa-envelope text-base md:text-xl lg:text-2xl text-t-accent"></i>
+      <span>Contact</span>
+    </p>
+    <h2 class="h2__title animate-in-up text-3xl md:text-5xl lg:text-6xl">
+      Let's make something awesome together!
+    </h2>
+  </div>
+
+  <div class="content__block grid-block block-grid-large py-20">
+    <div class="mx-auto relative">
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-base border border-stroke-elements rounded-xl p-16 md:p-12 z-10 transition-all duration-medium w-[90%]"
+        [class.opacity-100]="showSuccessMessage"
+        [class.visible]="showSuccessMessage"
+        [class.opacity-0]="!showSuccessMessage"
+        [class.invisible]="!showSuccessMessage"
+      >
+        <i class="ph-bold ph-smiley text-[6rem] md:text-[4rem] text-accent mb-8"></i>
+        <p class="text-2xl md:text-[2rem] font-semibold text-t-bright mb-4">Done!</p>
+        <span class="text-base text-t-medium"
+          >Thanks for your message. I'll get back as soon as possible.</span
+        >
+      </div>
+
+      <form
+        class="bg-base transition-opacity duration-medium"
+        [formGroup]="contactForm"
+        (ngSubmit)="onSubmit()"
+        [class.opacity-30]="showSuccessMessage"
+        [class.pointer-events-none]="showSuccessMessage"
+      >
+        <div class="container-fluid p-0">
+          <div class="row space-x-2k gx-0 justify-between">
+            <div class="col-12 col-md-6 mb-10 animate-in-up">
+              <input
+                type="text"
+                formControlName="name"
+                placeholder="Your Name*"
+                [class.!border-[#e74c3c]]="isFieldInvalid('name')"
+                [class.!bg-[rgba(231,76,60,0.1)]]="isFieldInvalid('name')"
+                class="w-full py-5 md:py-7 font-default text-sm md:text-base text-t-bright bg-base border-b border-stroke-elements transition-all duration-medium resize-none focus:outline-none placeholder:text-t-placeholder"
+              />
+              <div *ngIf="isFieldInvalid('name')" class="text-[1.3rem] text-red-400 mt-3">
+                Name is required
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 mb-10 animate-in-up">
+              <input
+                type="text"
+                formControlName="company"
+                placeholder="Company Name"
+                class="w-full py-5 md:py-7 font-default text-sm md:text-base text-t-bright bg-base border-b border-stroke-elements transition-all duration-medium resize-none focus:outline-none placeholder:text-t-placeholder"
+              />
+            </div>
+
+            <div class="col-12 col-md-6 mb-10 animate-in-up">
+              <input
+                type="email"
+                formControlName="email"
+                placeholder="Email Address*"
+                [class.!border-[#e74c3c]]="isFieldInvalid('email')"
+                [class.!bg-[rgba(231,76,60,0.1)]]="isFieldInvalid('email')"
+                class="w-full py-5 md:py-7 font-default text-sm md:text-base text-t-bright bg-base border-b border-stroke-elements transition-all duration-medium resize-none focus:outline-none placeholder:text-t-placeholder"
+              />
+              <div *ngIf="isFieldInvalid('email')" class="text-[1.3rem] text-red-400 mt-3">
+                <span *ngIf="contactForm.get('email')?.errors?.['required']"
+                  >Email is required</span
+                >
+                <span *ngIf="contactForm.get('email')?.errors?.['email']"
+                  >Please enter a valid email</span
+                >
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 mb-10 animate-in-up">
+              <input
+                type="tel"
+                formControlName="phone"
+                placeholder="Phone Number*"
+                [class.!border-[#e74c3c]]="isFieldInvalid('phone')"
+                [class.!bg-[rgba(231,76,60,0.1)]]="isFieldInvalid('phone')"
+                class="w-full py-5 md:py-7 font-default text-sm md:text-base text-t-bright bg-base border-b border-stroke-elements transition-all duration-medium resize-none focus:outline-none placeholder:text-t-placeholder"
+              />
+              <div *ngIf="isFieldInvalid('phone')" class="text-[1.3rem] text-red-400 mt-3">
+                Phone number is required
+              </div>
+            </div>
+
+            <div class="col-12 mb-10 animate-in-up">
+              <textarea
+                formControlName="message"
+                placeholder="A Few Words*"
+                rows="5"
+                [class.!border-[#e74c3c]]="isFieldInvalid('message')"
+                [class.!bg-[rgba(231,76,60,0.1)]]="isFieldInvalid('message')"
+                class="w-full py-5 md:py-7 font-default text-sm md:text-base text-t-bright bg-base border-b border-stroke-elements transition-all duration-medium resize-none focus:outline-none placeholder:text-t-placeholder"
+              ></textarea>
+              <div *ngIf="isFieldInvalid('message')" class="text-[1.3rem] text-red-400 mt-3">
+                Message is required
+              </div>
+            </div>
+
+            <div class="col-12 mb-0 animate-in-up">
+              <button
+                class="btn btn-default btn-hover btn-hover-accent m-0 disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none"
+                type="submit"
+                [disabled]="isSubmitting || contactForm.invalid"
+              >
+                <span class="btn-caption">
+                  {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+                </span>
+                <i class="ph-bold ph-paper-plane-tilt" *ngIf="!isSubmitting"></i>
+                <i
+                  class="ph-bold ph-spinner animate-[rotate_1s_linear_infinite]"
+                  *ngIf="isSubmitting"
+                ></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
-    <div>
-      <label class="block text-neutral-700 dark:text-neutral-200 font-semibold mb-2">Email</label>
-      <input type="email" formControlName="email" class="w-full px-4 py-2 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
-      <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="text-red-500 text-sm mt-1">Valid email is required.</div>
+  </div>
+
+  <div class="content__block grid-block">
+    <div
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 my-16 md:my-20 lg:my-24"
+    >
+      <div *ngFor="let social of socialLinks" class="grid-item-s animate-card-5">
+        <div
+          class="relative w-full aspect-[4/3] bg-base border border-stroke-elements rounded-xl flex justify-center text-2xl text-t-bright transition-all duration-medium cursor-pointer hover:-translate-y-2 hover:border-accent hover:bg-accent hover:text-base-tint items-center"
+        >
+          <i [class]="social.icon + ' text-3xl md:text-4xl lg:text-5xl'" aria-hidden="true"></i>
+          <a
+            class="absolute top-0 left-0 w-full h-full z-[1]"
+            [href]="social.url"
+            target="_blank"
+          ></a>
+        </div>
+      </div>
     </div>
-    <div>
-      <label class="block text-neutral-700 dark:text-neutral-200 font-semibold mb-2">Message</label>
-      <textarea formControlName="message" rows="5" class="w-full px-4 py-2 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-      <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="text-red-500 text-sm mt-1">Message is required.</div>
+  </div>
+
+  <div class="content__block">
+    <div class="mx-auto mb-16 md:mb-20 lg:mb-24">
+      <p class="text-2xl md:text-3xl lg:text-4xl text-t-medium m-0 animate-in-up">
+        Want to know more about me, tell me about your project or just to say hello?
+        <a
+          class="text-link-bold"
+          href="mailto:mugishaje@gmail.com?subject=Message%20from%20your%20site"
+          >Drop me a line</a
+        >
+        and I'll get back as soon as possible.
+      </p>
     </div>
-    <button type="submit" [disabled]="contactForm.invalid || loading" class="w-full py-3 bg-blue-500 text-white font-semibold rounded-lg shadow hover:bg-blue-600 transition disabled:opacity-50">Send Message</button>
-    <div *ngIf="success" class="text-green-500 text-center mt-2">Your message has been sent!</div>
-  </form>
+  </div>
+
+  <div class="content__block">
+    <div class="container-fluid p-0 py-12 border-t border-stroke-elements animate-in-up">
+      <div class="row contact-lines__item flex justify-start py-20">
+        <div *ngFor="let info of contactInfo" class="flex flex-col flex-1 items-start text-center">
+          <p class="text-md font-semibold text-t-bright tracking-wider m-0 animate-in-up">
+            {{ info.title }}
+          </p>
+          <p class="text-md m-0 animate-in-up">
+            <a
+              *ngIf="info.link; else textOnly"
+              class="text-link-bold !text-t-muted font-semibold !no-underline"
+              [href]="info.link"
+              [target]="info.link.startsWith('http') ? '_blank' : '_self'"
+            >
+              {{ info.value }}
+            </a>
+            <ng-template #textOnly>{{ info.value }}</ng-template>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

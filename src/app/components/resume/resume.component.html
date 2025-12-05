@@ -1,29 +1,121 @@
-<section class="py-20 px-4 max-w-5xl mx-auto">
-  <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-8">Resume</h2>
-  <div class="grid md:grid-cols-2 gap-8">
-    <div>
-      <h3 class="text-xl font-semibold text-blue-500 mb-4">Experience</h3>
-      <ul class="space-y-4">
-        <li *ngFor="let exp of experience" class="bg-white dark:bg-neutral-800 rounded-xl shadow p-6">
-          <div class="flex justify-between items-center mb-2">
-            <span class="font-bold text-neutral-900 dark:text-white">{{ exp.role }}</span>
-            <span class="text-sm text-neutral-500 dark:text-neutral-400">{{ exp.period }}</span>
-          </div>
-          <div class="text-neutral-700 dark:text-neutral-300">{{ exp.company }}</div>
-        </li>
-      </ul>
+<section id="resume" class="inner resume py-48">
+  <div class="content__block block-large mx-auto mb-24">
+    <p class="h2__subtitle animate-in-up flex gap-2 items-center btn !text-sm !py-3 !px-5">
+      <i class="fa-solid fa-star text-base md:text-lg !text-t-accent"></i>
+      <span>Resume</span>
+    </p>
+    <h2 class="h2__title animate-in-up">Education and practical experience</h2>
+    <p class="text-3xl leading-[1.7] text-t-medium mt-10 mx-auto animate-in-up">
+      A quick look at my journey: recent roles, responsibilities and what I worked on, followed by
+      courses and learning that shaped my approach. It’s a snapshot of practical experience backed
+      by continuous education.
+    </p>
+  </div>
+
+  <div class="content__block block-large">
+    <div class="mb-16">
+      <h3
+        class="relative pb-6 mb-0 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-24 after:h-[0.2rem] after:bg-accent after:rounded-[0.1rem] animate-in-up"
+      >
+        Work experience
+      </h3>
     </div>
-    <div>
-      <h3 class="text-xl font-semibold text-blue-500 mb-4">Education</h3>
-      <ul class="space-y-4">
-        <li *ngFor="let edu of education" class="bg-white dark:bg-neutral-800 rounded-xl shadow p-6">
-          <div class="flex justify-between items-center mb-2">
-            <span class="font-bold text-neutral-900 dark:text-white">{{ edu.degree }}</span>
-            <span class="text-sm text-neutral-500 dark:text-neutral-400">{{ edu.period }}</span>
-          </div>
-          <div class="text-neutral-700 dark:text-neutral-300">{{ edu.school }}</div>
-        </li>
-      </ul>
+
+    <div class="container-fluid p-0 mb-24">
+      <div
+        *ngFor="let item of experience()"
+        class="row g-0 py-10 border-b border-stroke-elements transition-all duration-medium last:border-b-0 hover:bg-base-tint hover:-mx-8 hover:px-8 hover:rounded-m hover:border-b-transparent md:py-8 md:hover:mx-0 md:hover:px-0 md:hover:bg-transparent animate-in-up"
+      >
+        <div class="col-12 col-md-2">
+          <span
+            class="font-accent text-sm md:text-[1.3rem] font-semibold text-accent block mb-4 animate-in-up"
+            >{{ item.timestamp }}</span
+          >
+        </div>
+        <div class="col-12 col-md-5">
+          <h5 class="mb-3 text-t-bright animate-in-up text-4xl">{{ item.role }}</h5>
+          <p class="text-md text-t-medium mb-0 animate-in-up">
+            {{ item.contractType }} at
+            <a [href]="item.website || '#'" class="text-link-bold" target="_blank">{{
+              item.company
+            }}</a>
+            in {{ item.location }}
+          </p>
+        </div>
+        <div class="col-12 col-md-5 flex flex-col gap-5">
+          <p
+            class="small mb-0 leading-relaxed animate-in-up !text-2xl"
+            *ngFor="let duty of item.duties"
+          >
+            {{ duty }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content__block block-large">
+    <div class="mb-16">
+      <h3
+        class="relative pb-6 mb-0 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-24 after:h-[0.2rem] after:bg-accent after:rounded-[0.1rem] animate-in-up"
+      >
+        My education
+      </h3>
+    </div>
+
+    <div class="container-fluid p-0 mb-24">
+      <div
+        *ngFor="let item of education"
+        class="row g-0 py-10 border-b border-stroke-elements transition-all duration-medium last:border-b-0 hover:bg-base-tint hover:-mx-8 hover:px-8 hover:rounded-m hover:border-b-transparent md:py-8 md:hover:mx-0 md:hover:px-0 md:hover:bg-transparent animate-in-up"
+      >
+        <div class="col-12 col-md-2">
+          <span
+            class="font-accent text-sm md:text-[1.3rem] font-semibold text-accent block mb-4 animate-in-up"
+            >{{ item.date }}</span
+          >
+        </div>
+        <div class="col-12 col-md-5">
+          <h5 class="mb-3 text-t-bright animate-in-up">{{ item.title }}</h5>
+          <p class="text-sm text-t-medium mb-0 animate-in-up">
+            Course by
+            <a [href]="item.sourceLink" class="text-link-bold" target="_blank">{{ item.source }}</a>
+          </p>
+        </div>
+        <div class="col-12 col-md-5">
+          <p class="small mb-0 leading-relaxed animate-in-up !text-3xl">{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content__block">
+    <div class="mb-16">
+      <h3
+        class="relative pb-6 mb-0 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-24 after:h-[0.2rem] after:bg-accent after:rounded-[0.1rem] animate-in-up"
+      >
+        My favourite tools
+      </h3>
+    </div>
+  </div>
+
+  <div class="content__block grid-block block-large">
+    <div class="flex justify-start flex-wrap gap-8 md:gap-6">
+      <div
+        *ngFor="let tool of tools"
+        class="flex-[0_0l_auto] grid-item-s px-12 py-8 animate-card-5 border-stroke-elements border rounded-xl flex flex-col items-center min-w-[12rem] md:min-w-[18rem] transition-all duration-medium hover:-translate-y-2 hover:border-accent hover:bg-accent group"
+      >
+        <img
+          class="object-contain animate-in-up w-16 h-16 md:w-20 md:h-20"
+          [src]="tool.icon"
+          [alt]="tool.name + ' Logo'"
+          loading="lazy"
+        />
+        <div
+          class="text-3xl font-semibold m-0 text-t-bright transition-colors duration-medium group-hover:text-base-tint animate-in-up mt-4"
+        >
+          {{ tool.name }}
+        </div>
+      </div>
     </div>
   </div>
 </section>

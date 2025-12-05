@@ -1,33 +1,57 @@
-<header id="header" class="fixed top-8 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-[120rem] px-6 py-4 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-2xl border border-[var(--stroke-elements)] rounded-2xl z-[1000] flex justify-between items-center transition-all">
-  <!-- Navigation Menu -->
-  <nav id="menu">
-    <ul class="flex gap-3 list-none m-0 p-0">
-      <li *ngFor="let item of menuItems">
-        <a class="flex items-center gap-2 px-4 py-2 text-base font-medium rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors" [href]="item.href">
-          <span class="hidden md:inline">{{ item.caption }}</span>
-          <i [class]="item.icon"></i>
+<header
+  id="header"
+  class="fixed flex justify-between items-center left-1/2 -translate-x-1/2 bottom-4 w-auto h-[4.4rem] rounded-[2rem] bg-black/[0.03] backdrop-blur-[10px] z-[11] px-3 py-2 md:bottom-10 md:px-4 lg:top-12 lg:left-auto lg:right-0 lg:bottom-auto lg:translate-x-0 lg:w-[calc(100%-330px)] lg:h-20 lg:py-0 lg:bg-transparent lg:backdrop-blur-none xl:w-[calc(100%-360px)] 2xl:top-20 2xl:w-[calc(100%-480px)] 3xl:w-[calc(100%-500px)] 3xl:h-24 p-6 md:p-2 lg:p-20"
+>
+  <nav id="menu" class="flex flex-1">
+    <ul class="flex justify-start list-none m-0 p-0 gap-2 md:gap-4">
+      <li class="m-0 flex gap-2" *ngFor="let item of menuItems">
+        <a
+          [href]="item.href"
+          (click)="scrollToSection(item.sectionId, $event)"
+          [class]="
+            itemClasses(item.sectionId) + ' min-w-[2.5rem] h-10 md:h-11 lg:h-12 px-3 md:px-4'
+          "
+        >
+          <span class="hidden lg:inline lg:mr-2 whitespace-nowrap">{{ item.caption }}</span>
+          <i
+            [class]="
+              item.icon +
+              ' ' +
+              (isActive(item.sectionId) ? 'text-base-tint' : 'text-t-muted') +
+              ' text-base md:text-lg lg:hidden '
+            "
+          ></i>
         </a>
       </li>
     </ul>
   </nav>
-  <!-- Header Controls -->
-  <div class="flex gap-3 items-center">
-    <button 
+  <div class="flex justify-end items-center lg:gap-0">
+    <button
       id="color-switcher"
-      class="flex items-center justify-center px-4 py-2 text-base font-medium rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+      class="text-t-muted text-base transition-all duration-300 ease-in-out lg:rounded-full lg:backdrop-blur-[10px] lg:mr-4 lg:btn btn-square"
       type="button"
       role="switch"
       [attr.aria-label]="currentTheme + ' mode'"
       [attr.aria-checked]="currentTheme === 'dark'"
-      (click)="onThemeToggle()">
-      <i [class]="currentTheme === 'dark' ? 'ph-bold ph-sun' : 'ph-bold ph-moon'"></i>
+      (click)="onThemeToggle()"
+    >
+      <i
+        [class]="currentTheme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon'"
+        class="relative text-[1.1rem] md:text-base lg:text-[1.8rem] 3xl:text-[2.2rem] !text-t-muted"
+      ></i>
     </button>
-    <a 
+    <a
       id="notify-trigger"
-      class="flex items-center gap-2 px-4 py-2 text-base font-medium rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
-      href="mailto:hello@alexwalker.com?subject=Message%20from%20your%20site">
-      <span class="hidden md:inline">Let's Talk</span>
-      <i class="ph-bold ph-chat-dots"></i>
+      class="group relative flex text-base whitespace-nowrap lg:w-auto rounded-full py-2 px-8 !lg:py-8 !lg:px-8 lg:font-bold lg:text-base lg:leading-[5rem] 3xl:leading-[6rem] 3xl:px-10 3xl:text-xl btn-hover btn-hover-accent before:content-[''] before:absolute before:inset-0 before:w-full before:h-full before:rounded-full before:[background:linear-gradient(135deg,var(--accent)_0%,var(--secondary)_100%)] before:[transform:scale3d(1,1,1)] before:transition before:duration-300 before:[will-change:transform] lg:before:rounded-[var(--_radius-m)] lg:hover:before:[transform:scale3d(1.03,1.03,1.03)]"
+      href="mailto:mugishaje@gmail.com?subject=Message%20from%20your%20site"
+    >
+      <span
+        class="hidden lg:block relative text-transparent overflow-hidden transition-[0.3s] [text-shadow:0_0_var(--t-opp-bright),0_5rem_var(--t-opp-bright)] lg:group-hover:[text-shadow:0_-5rem_var(--t-opp-bright),0_0_var(--t-opp-bright)] 3xl:leading-[6rem] 3xl:[text-shadow:0_0_var(--t-opp-bright),0_6rem_var(--t-opp-bright)] 3xl:group-hover:[text-shadow:0_-6rem_var(--t-opp-bright),0_0_var(--t-opp-bright)]"
+        >Let's Talk</span
+      >
+      <i
+        class="fa-solid fa-comment block relative leading-[4.4rem] text-t-opp-bright overflow-hidden transition-[0.3s] md:ml-2 text-[1.8rem] lg:text-transparent lg:leading-[5rem] lg:text-[1.8rem] lg:[text-shadow:0_0_var(--t-opp-bright),0_5rem_var(--t-opp-bright)] lg:group-hover:[text-shadow:0_-5rem_var(--t-opp-bright),0_0_var(--t-opp-bright)] 3xl:leading-[6rem] 3xl:text-[2.2rem] 3xl:[text-shadow:0_0_var(--t-opp-bright),0_6rem_var(--t-opp-bright)] 3xl:group-hover:[text-shadow:0_-6rem_var(--t-opp-bright),0_0_var(--t-opp-bright)]"
+      ></i>
     </a>
   </div>
 </header>

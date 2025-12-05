@@ -1,8 +1,38 @@
-<section class="flex flex-col items-center justify-center min-h-[60vh] py-24 text-center">
-  <h1 class="text-5xl md:text-7xl font-extrabold text-neutral-900 dark:text-white mb-6">Hi, I'm <span class="text-blue-500">Alex Walker</span></h1>
-  <p class="text-lg md:text-2xl text-neutral-600 dark:text-neutral-300 mb-8">I design and build beautiful digital experiences.</p>
-  <div class="flex gap-4 justify-center">
-    <a href="#portfolio" class="px-6 py-3 bg-blue-500 text-white rounded-lg font-semibold shadow hover:bg-blue-600 transition">View Portfolio</a>
-    <a href="#contact" class="px-6 py-3 bg-neutral-200 dark:bg-neutral-800 text-neutral-900 dark:text-white rounded-lg font-semibold shadow hover:bg-neutral-300 dark:hover:bg-neutral-700 transition">Contact Me</a>
+<section id="home" class="main intro pt-[35vh] md:pt-[40vh] lg:pt-[45vh]">
+  <div class="content__block section-grid-title">
+    <p
+      class="h2__subtitle animate-in-up flex gap-2 items-center btn !text-xs md:!text-sm !py-2 md:!py-3 !px-4 md:!px-5"
+    >
+      <i class="fa-solid fa-comment text-base md:text-xl lg:text-2xl !text-t-accent"></i>
+      <span>Let's Talk</span>
+    </p>
+  </div>
+  <div id="headline" class="headline flex flex-col gap-8 md:gap-12 lg:gap-20 items-start">
+    <h1
+      class="headline__title animate-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-tight"
+    >
+      I'm Jean Pierre Baraka,<br />Software Developer.
+    </h1>
+    <div
+      class="headline__btnholder flex flex-col sm:flex-row gap-4 md:gap-6 lg:gap-10 w-full sm:w-auto"
+    >
+      <a
+        class="btn mobile-vertical btn-default btn-hover btn-hover-accent-mobile animate-headline w-full sm:w-auto justify-center"
+        href="#portfolio"
+      >
+        <span class="btn-caption">My Works</span>
+        <i class="ph-bold ph-squares-four"></i>
+      </a>
+      <a
+        class="mobile-vertical btn btn-hover btn-hover-outline-mobile animate-headline w-full sm:w-auto justify-center"
+        target="_blank"
+        [href]="
+          'https://docs.google.com/document/d/1uIEA2vE9bvh3uKczkBR35uGUd7J5_wqec3F3exSw7Uk/edit?usp=sharing'
+        "
+      >
+        <span>Download CV</span>
+        <i class="ph-bold ph-download-simple"></i>
+      </a>
+    </div>
   </div>
 </section>

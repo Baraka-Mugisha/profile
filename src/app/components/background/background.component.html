@@ -1,13 +1,76 @@
-<div class="absolute inset-0 -z-10">
-  <svg class="w-full h-full" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="bg-gradient" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#a5b4fc" />
-        <stop offset="100%" stop-color="#f0abfc" />
-      </linearGradient>
-    </defs>
-    <rect width="1920" height="1080" fill="url(#bg-gradient)" />
-    <circle cx="1600" cy="200" r="200" fill="#818cf8" fill-opacity="0.2" />
-    <circle cx="400" cy="900" r="150" fill="#f472b6" fill-opacity="0.2" />
-  </svg>
+<div
+  id="svgBackground"
+  class="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 opacity-0 transition-opacity duration-1000"
+>
+  <div
+    class="absolute -top-[10%] -right-[10%] w-64 h-64 sm:w-80 sm:h-80 md:w-[42rem] md:h-[42rem] md:-top-[12%] md:-right-[22%] lg:w-[60rem] lg:h-[60rem] lg:-top-[15%] lg:-right-[30%] animate-[float_20s_ease-in-out_infinite]"
+    data-speed="0.8"
+  >
+    <svg
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      x="0px"
+      y="0px"
+      width="100%"
+      height="100%"
+      viewBox="0 0 1000 1000"
+      style="enable-background: new 0 0 1000 1000"
+      xml:space="preserve"
+    >
+      <defs>
+        <radialGradient
+          id="color-gradient"
+          cx="418.5665"
+          cy="225.9685"
+          r="499.9326"
+          fx="866.8251"
+          fy="4.6162"
+          gradientTransform="matrix(-0.6935 0.7207 -0.7207 -0.6935 953.1126 355.0528)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" style="stop-color: var(--gradient-one)" />
+          <stop offset="1" style="stop-color: var(--gradient-one); stop-opacity: 0" />
+        </radialGradient>
+      </defs>
+      <circle fill="url(#color-gradient)" cx="500" cy="500" r="500" opacity="0.6" />
+    </svg>
+  </div>
+
+  <div
+    class="absolute -bottom-[6%] -left-[6%] w-48 h-48 sm:w-64 sm:h-64 md:w-[26rem] md:h-[26rem] md:-bottom-[10%] md:-left-[16%] lg:w-[30rem] lg:h-[30rem] lg:-bottom-[10%] lg:-left-[20%] animate-[float_15s_ease-in-out_infinite_reverse]"
+    data-speed="0.4"
+  >
+    <svg
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      x="0px"
+      y="0px"
+      width="100%"
+      height="100%"
+      viewBox="0 0 429.6 429.6"
+      style="enable-background: new 0 0 429.6 429.6"
+      xml:space="preserve"
+    >
+      <defs>
+        <radialGradient
+          id="color-gradient-2"
+          cx="2213.9312"
+          cy="-11537.4219"
+          r="214.85"
+          fx="2393.6191"
+          fy="-11419.6494"
+          gradientTransform="matrix(1.902285e-02 0.9998 0.9998 -1.954636e-02 11706.5303 -2223.4016)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" style="stop-color: var(--gradient-one)" />
+          <stop offset="1" style="stop-color: var(--gradient-one); stop-opacity: 0" />
+        </radialGradient>
+      </defs>
+      <path
+        fill="url(#color-gradient-2)"
+        fill-opacity="0.6"
+        d="M63,63C146.9-21,282.9-21,366.8,62.9s83.8,219.9-0.1,303.8s-219.9,83.9-303.8,0.1S-20.9,146.9,63,63z"
+      />
+    </svg>
+  </div>
 </div>

@@ -1,31 +1,157 @@
-<section class="py-20 px-4 max-w-5xl mx-auto">
-  <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-8">About Me</h2>
-  <div class="grid md:grid-cols-2 gap-8">
-    <div>
-      <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">I'm a passionate UI/UX designer with 7+ years of experience crafting digital products that delight users and drive results. My approach blends creativity, empathy, and technical skill to deliver beautiful, functional solutions.</p>
-      <ul class="list-disc pl-6 text-neutral-600 dark:text-neutral-400">
-        <li>Human-centered design</li>
-        <li>Prototyping & wireframing</li>
-        <li>Design systems</li>
-        <li>Collaboration with dev teams</li>
-      </ul>
-    </div>
-    <div class="flex flex-col gap-4">
-      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow p-6">
-        <h3 class="text-xl font-semibold text-blue-500 mb-2">Achievements</h3>
-        <ul class="list-disc pl-6 text-neutral-700 dark:text-neutral-200">
-          <li>Red Dot Design Award Winner</li>
-          <li>Behance Top 10 UI Designer</li>
-          <li>Speaker at UXDX Europe</li>
-        </ul>
+<section id="about" class="inner about py-48">
+  <div class="content__block section-grid-title mb-12 md:mb-16 lg:mb-24">
+    <p
+      class="h2__subtitle animate-in-up flex gap-2 items-center btn !text-xs md:!text-sm !py-2 md:!py-3 !px-4 md:!px-5"
+    >
+      <i class="fa-solid fa-user text-base md:text-xl lg:text-2xl text-t-accent"></i>
+      <span>About Me</span>
+    </p>
+    <h2 class="h2__title animate-in-up text-2xl md:text-5xl lg:text-6xl">
+      Turning complex problems into simple IT solutions
+    </h2>
+  </div>
+
+  <div class="my-12 md:my-16 lg:my-24">
+    <div class="flex flex-col sm:flex-row md:items-stretch gap-4 md:gap-6">
+      <div
+        *ngFor="let achievement of achievements"
+        class="flex-1 min-h-[12rem] md:min-h-[14rem] lg:min-h-[12rem] flex flex-col grid-item animate-card-3"
+      >
+        <div
+          class="bg-base border border-stroke-elements rounded-lg md:rounded-xl p-8 md:p-10 lg:p-8 text-center h-full flex flex-col justify-center transition-all duration-medium hover:-translate-y-2 hover:border-accent"
+        >
+          <p
+            class="font-accent text-[2.8rem] sm:text-[3.2rem] md:text-[4rem] lg:text-[4.8rem] font-bold text-accent mb-3 md:mb-5 leading-none"
+          >
+            {{ achievement.number }}
+          </p>
+          <p class="text-sm md:text-base font-medium text-t-medium m-0">
+            {{ achievement.description }}
+          </p>
+        </div>
       </div>
-      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow p-6">
-        <h3 class="text-xl font-semibold text-blue-500 mb-2">Services</h3>
-        <ul class="list-disc pl-6 text-neutral-700 dark:text-neutral-200">
-          <li>UI/UX Design</li>
-          <li>Web & Mobile App Design</li>
-          <li>Branding & Identity</li>
-        </ul>
+    </div>
+  </div>
+
+  <div class="mb-12 md:mb-16 lg:mb-24">
+    <div class="w-full">
+      <div class="flex flex-wrap justify-between gap-0">
+        <div
+          class="w-full xl:w-2/3 pr-0 xl:pr-16 mb-12 md:mb-16 xl:mb-0 grid-item pt-2 md:pt-6 2xl:pt-4 text-base sm:text-xl md:text-2xl lg:text-3xl leading-relaxed md:leading-[2.2rem] lg:leading-[2.6rem]"
+        >
+          <p class="animate-in-up mb-6 md:mb-8">
+            I’m a software engineer who enjoys turning ideas into practical, friendly products. I
+            work across frontend, backend and mobile, focusing on experiences that feel simple and
+            get the job done.
+          </p>
+          <p class="animate-in-up mb-6 md:mb-8">
+            My approach is straightforward: clean code, small iterations, and steady delivery. I
+            lean on good tests, CI/CD and cloud-native tools so features ship smoothly and scale
+            when they need to.
+          </p>
+          <p class="animate-in-up mb-6 md:mb-8">
+            I like collaborating with teams and bridging product goals with practical
+            engineering-polishing the rough edges and helping ideas reach production without the
+            drama.
+          </p>
+          <div class="mt-6 md:mt-10 2xl:mt-12 3xl:mt-[3.2rem] animate-in-up">
+            <a
+              class="mobile-vertical btn btn-hover btn-hover-outline-mobile animate-headline w-full sm:w-auto justify-center"
+              target="_blank"
+              [href]="
+                'https://docs.google.com/document/d/1uIEA2vE9bvh3uKczkBR35uGUd7J5_wqec3F3exSw7Uk/edit?usp=sharing'
+              "
+            >
+              <span>Download CV</span>
+              <i class="ph-bold ph-download-simple"></i>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="w-full xl:w-1/3 pl-0 xl:pl-8 grid-item pt-2 md:pt-6 lg:pt-10 2xl:pt-6 text-base sm:text-xl md:text-2xl flex gap-5 md:gap-8 lg:gap-10 2xl:gap-12 3xl:gap-[3.2rem] flex-col"
+        >
+          <div class="animate-in-up">
+            <div class="m-0 leading-[1.4]">
+              <small class="block text-sm lg:text-xl font-medium text-t-muted tracking-wider mb-2"
+                >Name</small
+              >
+              <div class="text-link-bold !no-underline">{{ socials.name }}</div>
+            </div>
+          </div>
+          <div class="about-info__item animate-in-up">
+            <div>
+              <small class="block text-sm lg:text-xl font-medium text-t-muted tracking-wider mb-2"
+                >Phone</small
+              >
+              <a class="text-link-bold !no-underline" href="tel:+250785459575">{{
+                socials.phoneFormatted
+              }}</a>
+            </div>
+          </div>
+          <div class="about-info__item animate-in-up">
+            <div>
+              <small class="block text-sm lg:text-xl font-medium text-t-muted tracking-wider mb-2"
+                >Email</small
+              >
+              <a
+                class="text-link-bold !no-underline break-all"
+                href="mailto:mugishaje@gmail.com?subject=Message%20from%20your%20site"
+                >mugishaje@gmail.com</a
+              >
+            </div>
+          </div>
+          <div class="about-info__item animate-in-up">
+            <div>
+              <small class="block text-sm lg:text-xl font-medium text-t-muted tracking-wider mb-2"
+                >Location</small
+              >
+              <a
+                class="text-link-bold !no-underline"
+                href="https://maps.app.goo.gl/xMJXTEUeHkv6kYRQ6"
+                target="_blank"
+                >{{ socials.location }}</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-12 md:mb-16 lg:mb-24">
+    <div class="w-full">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-16">
+        <div *ngFor="let service of services" class="w-full grid-item animate-card-2">
+          <div
+            class="bg-base border border-stroke-elements rounded-lg md:rounded-xl p-8 md:p-10 lg:p-12 h-full overflow-hidden flex flex-col transition-all duration-medium hover:-translate-y-2 hover:border-accent"
+          >
+            <div class="mb-6 md:mb-8 lg:mb-10">
+              <h4
+                class="mb-4 md:mb-6 animate-in-up text-2xl md:text-3xl lg:text-4xl"
+                [innerHTML]="service.title"
+              ></h4>
+              <div class="flex flex-wrap gap-2 md:gap-3 mb-4 md:mb-6 animate-in-up">
+                <span
+                  *ngFor="let tag of service.tags"
+                  class="rounded-tag tag-outline text-xs md:text-sm"
+                >
+                  {{ tag }}
+                </span>
+              </div>
+              <p class="text-xs md:text-sm mb-0 animate-in-up">{{ service.description }}</p>
+            </div>
+            <div
+              class="-mx-8 md:-mx-10 lg:-mx-12 -mb-8 md:-mb-10 lg:-mb-12 overflow-hidden flex animate-in-up"
+            >
+              <img
+                [src]="service.image"
+                alt="Service Image"
+                class="w-full h-auto object-cover transition-transform duration-medium hover:scale-105"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
