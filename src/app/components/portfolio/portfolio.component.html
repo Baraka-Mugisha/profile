@@ -1,0 +1,82 @@
+<section id="portfolio" class="py-16 md:py-24 lg:py-32 xl:pt-48">
+  <div class="mx-auto mb-12 md:mb-20 lg:mb-32">
+    <p
+      class="justify-cenhyter font-medium text-t-accent mb-6 md:mb-10 animate-in-up flex gap-2 items-center btn !text-xs md:!text-sm !py-2 md:!py-3 !px-4 md:!px-5"
+    >
+      <i class="fa-solid fa-star text-base md:text-xl lg:text-2xl !text-t-accent"></i>
+      <span>Portfolio</span>
+    </p>
+    <h2 class="h2__title animate-in-up text-3xl md:text-5xl lg:text-6xl">
+      Check out my featured projects
+    </h2>
+  </div>
+
+  <div class="mb-12 md:mb-16 lg:mb-24">
+    <div class="w-full px-0">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
+        <figure
+          *ngFor="let item of portfolioItems()"
+          class="w-full cursor-pointer transition-transform duration-medium hover:-translate-y-2 grid-item animate-card-2 border border-stroke-elements rounded-m md:rounded-xl overflow-hidden bg-base-tint"
+          (click)="openLightbox(item)"
+        >
+          <div class="relative w-full aspect-square md:aspect-[4/3]">
+            <img
+              [src]="item.image"
+              class="w-full h-full absolute inset-0 object-cover transition-transform duration-medium hover:scale-105"
+              [alt]="item.name"
+            />
+
+            <div
+              class="absolute inset-x-0 bottom-0 p-3 md:p-4 lg:p-6 bg-gradient-to-t from-black/40 to-transparent text-base-tint"
+            >
+              <h5 class="mb-1 md:mb-2 lg:mb-3 text-lg md:text-2xl lg:text-3xl text-base-tint">
+                {{ item.name }}
+              </h5>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  *ngFor="let tag of item.tags"
+                  class="rounded-tag text-[0.7rem] md:text-xs lg:text-lg"
+                >
+                  {{ tag }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div
+  *ngIf="selectedItem"
+  class="fixed top-0 left-0 w-full h-full bg-black/90 flex items-center justify-center z-[10000] p-4 md:p-12"
+  (click)="closeLightbox()"
+  [@fadeInOut]
+>
+  <div
+    class="relative w-full max-w-[90rem] max-h-[90%] bg-base-tint rounded-l md:rounded-l p-6 md:p-8 lg:p-12 overflow-y-auto"
+    (click)="$event.stopPropagation()"
+  >
+    <button
+      class="absolute top-2 right-2 md:top-4 md:right-4 w-12 h-12 md:w-16 md:h-16 bg-base border-none rounded-full text-t-bright text-xl md:text-[2rem] cursor-pointer z-10 transition-all duration-medium hover:bg-accent hover:text-base-tint hover:scale-110"
+      (click)="closeLightbox()"
+    >
+      <i class="ph-bold ph-x"></i>
+    </button>
+    <img
+      [src]="selectedItem.demo || selectedItem.image"
+      [alt]="selectedItem.name"
+      class="w-full h-auto rounded-md md:rounded-m mb-6 md:mb-8"
+    />
+    <div>
+      <h3 class="mb-4 md:mb-6 text-2xl md:text-3xl lg:text-4xl">{{ selectedItem.name }}</h3>
+      <div class="flex flex-wrap gap-2 md:gap-3 mb-4 md:mb-6">
+        <span *ngFor="let tag of selectedItem.tags" class="rounded-tag text-xs md:text-sm">{{
+          tag
+        }}</span>
+      </div>
+      <p class="text-sm md:text-base lg:text-lg">{{ selectedItem.about }}</p>
+    </div>
+  </div>
+</div>
