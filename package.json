@@ -23,6 +23,10 @@
     ]
   },
   "private": true,
+  "engines": {
+    "node": ">=20.19.0",
+    "npm": ">=10.0.0"
+  },
   "dependencies": {
     "@angular/animations": "^20.3.1",
     "@angular/common": "^20.3.0",
