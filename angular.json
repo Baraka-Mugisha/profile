@@ -60,10 +60,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "build:production"
+              "buildTarget": "profile:build:production"
             },
             "development": {
-              "buildTarget": "build:development"
+              "buildTarget": "profile:build:development"
             }
           },
           "defaultConfiguration": "development"
