@@ -66,36 +66,48 @@ export class ResumeComponent implements OnInit {
   tools: Tool[] = [
     {
       name: 'Next.js',
-      icon: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/nextdotjs.svg',
+      icon: 'https://api.iconify.design/simple-icons/nextdotjs.svg?color=%23000000&width=128',
     },
-    { name: 'NestJS', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/nestjs.svg' },
-    { name: 'Prisma', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/prisma.svg' },
+    {
+      name: 'NestJS',
+      icon: 'https://api.iconify.design/simple-icons/nestjs.svg?color=%23E0234E&width=128',
+    },
+    {
+      name: 'Prisma',
+      icon: 'https://api.iconify.design/simple-icons/prisma.svg?color=%232D3748&width=128',
+    },
     {
       name: 'PostgreSQL',
-      icon: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/postgresql.svg',
+      icon: 'https://api.iconify.design/simple-icons/postgresql.svg?color=%234169E1&width=128',
     },
     {
       name: 'Radix UI',
-      icon: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/radixui.svg',
+      icon: 'https://api.iconify.design/simple-icons/radixui.svg?color=%23161618&width=128',
     },
     {
       name: 'Kubernetes',
-      icon: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/kubernetes.svg',
+      icon: 'https://api.iconify.design/simple-icons/kubernetes.svg?color=%23326CE5&width=128',
     },
     {
       name: 'Terraform',
-      icon: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/terraform.svg',
+      icon: 'https://api.iconify.design/simple-icons/terraform.svg?color=%237B42BC&width=128',
     },
     {
       name: 'Playwright',
-      icon: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/playwright.svg',
+      icon: 'https://api.iconify.design/simple-icons/playwright.svg?color=%232EAD33&width=128',
     },
     {
       name: 'Storybook',
-      icon: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/storybook.svg',
+      icon: 'https://api.iconify.design/simple-icons/storybook.svg?color=%23FF4785&width=128',
     },
-    { name: 'Sentry', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/sentry.svg' },
-    { name: 'Expo', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/expo.svg' },
+    {
+      name: 'Sentry',
+      icon: 'https://api.iconify.design/simple-icons/sentry.svg?color=%23362D59&width=128',
+    },
+    {
+      name: 'Expo',
+      icon: 'https://api.iconify.design/simple-icons/expo.svg?color=%23000020&width=128',
+    },
   ];
 
   getStarsArray(rating: number): number[] {

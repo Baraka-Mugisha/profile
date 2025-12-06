@@ -19,30 +19,31 @@ export class AboutComponent {
 
   services: Service[] = [
     {
-      title: 'Frontend<br>development',
-      tags: ['UI/UX Design', 'Design to Code'],
-      description: 'I work with HTML/CSS, Framer and WordPress.',
+      title: 'Full Stack<br>Development',
+      tags: ['Frontend', 'Backend', 'APIs'],
+      description:
+        'Building scalable web applications with React, Angular, Vue, Node.js, NestJS, and PostgreSQL/MongoDB.',
       image: '/img/services/1200x900_s01.webp',
     },
     {
-      title: 'Digital art and graphic design',
-      tags: ['Illustrations', 'AI Experiments'],
+      title: 'Mobile App<br>Development',
+      tags: ['React Native', 'Cross-platform', 'iOS/Android'],
       description:
-        'I use Adobe Photoshop, Fresco and Blender to create illustrations and 3D renders for my clients and stocks.',
+        'Creating native mobile experiences using React Native, Expo, and Ionic for both iOS and Android platforms.',
       image: '/img/services/1200x900_s02.webp',
     },
     {
-      title: 'SEO/Digital marketing solutions',
-      tags: ['Social Media', 'Analytics'],
+      title: 'Cloud & DevOps<br>Solutions',
+      tags: ['Docker', 'Kubernetes', 'CI/CD'],
       description:
-        'Social media content plans, media monitoring, email and text messaging and search engine optimization.',
+        'Infrastructure automation with Docker, Kubernetes, Terraform, and Jenkins for seamless deployment pipelines.',
       image: '/img/services/1200x900_s03.webp',
     },
     {
-      title: 'Brand<br>identity',
-      tags: ['Logo Design', 'Style Guides'],
+      title: 'Technical<br>Leadership',
+      tags: ['Team Lead', 'Code Review', 'Mentoring'],
       description:
-        'I help my clients to develop a personality and brand voice, design the brand look and logo.',
+        'Leading development teams, conducting code reviews, and mentoring developers to maintain high-quality standards.',
       image: '/img/services/1200x900_s04.webp',
     },
   ];
