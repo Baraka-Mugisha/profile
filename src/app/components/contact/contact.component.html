@@ -43,7 +43,7 @@
                 placeholder="Your Name*"
                 [class.!border-[#e74c3c]]="isFieldInvalid('name')"
                 [class.!bg-[rgba(231,76,60,0.1)]]="isFieldInvalid('name')"
-                class="w-full py-5 md:py-7 font-default text-sm md:text-base text-t-bright bg-base border-b border-stroke-elements transition-all duration-medium resize-none focus:outline-none placeholder:text-t-placeholder"
+                class="w-full py-5 md:py-7 font-default text-sm md:text-base !text-t-bright bg-base border-b border-stroke-elements transition-all duration-medium resize-none focus:outline-none placeholder:text-t-placeholder"
               />
               <div *ngIf="isFieldInvalid('name')" class="text-[1.3rem] text-red-400 mt-3">
                 Name is required
@@ -55,7 +55,7 @@
                 type="text"
                 formControlName="company"
                 placeholder="Company Name"
-                class="w-full py-5 md:py-7 font-default text-sm md:text-base text-t-bright bg-base border-b border-stroke-elements transition-all duration-medium resize-none focus:outline-none placeholder:text-t-placeholder"
+                class="w-full py-5 md:py-7 font-default text-sm md:text-base !text-t-bright bg-base border-b border-stroke-elements transition-all duration-medium resize-none focus:outline-none placeholder:text-t-placeholder"
               />
             </div>
 
@@ -66,7 +66,7 @@
                 placeholder="Email Address*"
                 [class.!border-[#e74c3c]]="isFieldInvalid('email')"
                 [class.!bg-[rgba(231,76,60,0.1)]]="isFieldInvalid('email')"
-                class="w-full py-5 md:py-7 font-default text-sm md:text-base text-t-bright bg-base border-b border-stroke-elements transition-all duration-medium resize-none focus:outline-none placeholder:text-t-placeholder"
+                class="w-full py-5 md:py-7 font-default text-sm md:text-base !text-t-bright bg-base border-b border-stroke-elements transition-all duration-medium resize-none focus:outline-none placeholder:text-t-placeholder"
               />
               <div *ngIf="isFieldInvalid('email')" class="text-[1.3rem] text-red-400 mt-3">
                 <span *ngIf="contactForm.get('email')?.errors?.['required']"
@@ -85,7 +85,7 @@
                 placeholder="Phone Number*"
                 [class.!border-[#e74c3c]]="isFieldInvalid('phone')"
                 [class.!bg-[rgba(231,76,60,0.1)]]="isFieldInvalid('phone')"
-                class="w-full py-5 md:py-7 font-default text-sm md:text-base text-t-bright bg-base border-b border-stroke-elements transition-all duration-medium resize-none focus:outline-none placeholder:text-t-placeholder"
+                class="w-full py-5 md:py-7 font-default text-sm md:text-base !text-t-bright bg-base border-b border-stroke-elements transition-all duration-medium resize-none focus:outline-none placeholder:text-t-placeholder"
               />
               <div *ngIf="isFieldInvalid('phone')" class="text-[1.3rem] text-red-400 mt-3">
                 Phone number is required
@@ -99,7 +99,7 @@
                 rows="5"
                 [class.!border-[#e74c3c]]="isFieldInvalid('message')"
                 [class.!bg-[rgba(231,76,60,0.1)]]="isFieldInvalid('message')"
-                class="w-full py-5 md:py-7 font-default text-sm md:text-base text-t-bright bg-base border-b border-stroke-elements transition-all duration-medium resize-none focus:outline-none placeholder:text-t-placeholder"
+                class="w-full py-5 md:py-7 font-default text-sm md:text-base !text-t-bright bg-base border-b border-stroke-elements transition-all duration-medium resize-none focus:outline-none placeholder:text-t-placeholder"
               ></textarea>
               <div *ngIf="isFieldInvalid('message')" class="text-[1.3rem] text-red-400 mt-3">
                 Message is required
