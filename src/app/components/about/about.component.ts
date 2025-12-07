@@ -30,21 +30,21 @@ export class AboutComponent {
       tags: ['React Native', 'Cross-platform', 'iOS/Android'],
       description:
         'Creating native mobile experiences using React Native, Expo, and Ionic for both iOS and Android platforms.',
-      image: '/img/services/1200x900_s02.webp',
+      image: '/img/services/1200x900_s03.webp',
     },
     {
       title: 'Cloud & DevOps<br>Solutions',
       tags: ['Docker', 'Kubernetes', 'CI/CD'],
       description:
         'Infrastructure automation with Docker, Kubernetes, Terraform, and Jenkins for seamless deployment pipelines.',
-      image: '/img/services/1200x900_s03.webp',
+      image: '/img/services/devops2.png',
     },
     {
       title: 'Technical<br>Leadership',
       tags: ['Team Lead', 'Code Review', 'Mentoring'],
       description:
         'Leading development teams, conducting code reviews, and mentoring developers to maintain high-quality standards.',
-      image: '/img/services/1200x900_s04.webp',
+      image: '/img/services/leadership.png',
     },
   ];
 }
