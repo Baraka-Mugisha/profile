@@ -8,7 +8,7 @@ export interface Experience {
   duties: string[];
   isActive: boolean;
   stacks?: string[];
-  website?: string;
+  companySite?: string;
 }
 
 export const experiences: Experience[] = [
