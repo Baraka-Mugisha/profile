@@ -64,7 +64,7 @@ export class ContactComponent implements OnInit {
 
       // The Web App URL from your Apps Script deployment
       const scriptUrl =
-        'https://script.google.com/macros/s/AKfycbxwCFfrJC7WZ6FptuB4kJ2q0DFgqAJ6rnc9Vr52hZ0pv_hlhWzogYwseliJUVsm07cD/exec';
+        'https://script.google.com/macros/s/AKfycbyAm53gnv7tMWU_0ZYadf7NDMHPEO80PTzktrdUFZHIhjLMtWR5YcviOusVdUc5oLaY/exec';
 
       const formData = new URLSearchParams();
       formData.append('Name', this.contactForm.value.name);
