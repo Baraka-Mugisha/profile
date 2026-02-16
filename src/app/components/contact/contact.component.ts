@@ -62,20 +62,38 @@ export class ContactComponent implements OnInit {
     if (this.contactForm.valid && !this.isSubmitting) {
       this.isSubmitting = true;
 
-      console.log('Form submitted:', this.contactForm.value);
+      // The Web App URL from your Apps Script deployment
+      const scriptUrl =
+        'https://script.google.com/macros/s/AKfycbxwCFfrJC7WZ6FptuB4kJ2q0DFgqAJ6rnc9Vr52hZ0pv_hlhWzogYwseliJUVsm07cD/exec';
 
-      setTimeout(() => {
-        this.isSubmitting = false;
-        this.showSuccessMessage = true;
-        this.contactForm.reset();
-        setTimeout(() => {
-          this.showSuccessMessage = false;
-        }, 5000);
-      }, 2000);
-    } else {
-      Object.keys(this.contactForm.controls).forEach((key) => {
-        this.contactForm.get(key)?.markAsTouched();
-      });
+      const formData = new URLSearchParams();
+      formData.append('Name', this.contactForm.value.name);
+      formData.append('Email', this.contactForm.value.email);
+      formData.append('Phone', this.contactForm.value.phone);
+      formData.append('Company', this.contactForm.value.company);
+      formData.append('Message', this.contactForm.value.message);
+
+      fetch(scriptUrl, {
+        method: 'POST',
+        mode: 'no-cors', // Bypasses CORS preflight check
+        cache: 'no-cache',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formData.toString(),
+      })
+        .then(() => {
+          // NOTE: With 'no-cors', you won't get a readable response body,
+          // but the data will reach your Google Sheet successfully.
+          this.showSuccessMessage = true;
+          this.contactForm.reset();
+          this.isSubmitting = false;
+          setTimeout(() => (this.showSuccessMessage = false), 5000);
+        })
+        .catch((error) => {
+          console.error('Submission error:', error);
+          this.isSubmitting = false;
+        });
     }
   }
 }
