@@ -68,7 +68,6 @@ export const PORTFOLIO_PROJECTS: Project[] = [
     summary:
       "A mobile app for a marketplace for selling the stuff you don't need anymore. Designed in React native and connected to a backend Nodejs server",
     stacks: ['React Native', 'Node.js'],
-    website: 'https://expo.dev/@baraka_keem/sellit',
     github: 'https://github.com/Baraka-Mugisha/DoneWIthIt',
     about:
       "The React Native full stack app I developed is an online marketplace where users can sell items they don't need anymore. It allows users to create an account, post their items for sale, and communicate with potential buyers.\n\nThe app features a search functionality, filtering options, and a user-friendly interface to make the buying and selling experience easy and enjoyable.\n\nIt provides a simple and convenient platform for users to declutter their lives and earn some extra cash in the process.",
