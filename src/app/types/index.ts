@@ -23,6 +23,7 @@ export interface Project {
 }
 
 export interface SocialLink {
+  label: string;
   icon: string;
   url: string;
 }

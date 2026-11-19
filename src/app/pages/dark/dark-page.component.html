@@ -1,0 +1,71 @@
+<div class="page">
+  <div class="wrap">
+    <header class="top">
+      <span class="name">{{ info.name }}</span>
+      <nav>
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <span class="status mono">Available for freelance and full-time work · {{ info.location }}</span>
+      <h1>Full-stack engineer. <span>Client apps, back offices, mobile.</span></h1>
+      <p class="lede">
+        I build web and mobile products for insurers, retailers and small teams, from database
+        schema to deployed release. Working since 2020 across Rwanda, South Africa, India and the
+        US.
+      </p>
+      <div class="btns">
+        <a class="btn primary" href="#work">View work</a>
+        <a class="btn" href="#experience">Experience</a>
+        <a class="btn" href="mailto:mugishaje@gmail.com">Email me</a>
+      </div>
+    </div>
+
+    <div class="section-title" id="work">
+      <h2>Selected work</h2>
+      <span class="mono">{{ cases.length }} projects</span>
+    </div>
+    <div class="grid">
+      @for (c of cases; track c.title; let i = $index) {
+        <article class="card">
+          <span class="mono idx">{{ '0' + (i + 1) }} / {{ c.org }}</span>
+          <h3>{{ c.title }}</h3>
+          <p>{{ c.summary }}</p>
+          <span class="mono stack">{{ c.stack.join(' · ') }}</span>
+        </article>
+      }
+    </div>
+
+    <div class="section-title" id="experience">
+      <h2>Experience</h2>
+      <span class="mono">2020 – 2026</span>
+    </div>
+    @for (e of experiences; track e.id) {
+      <div class="row">
+        <div class="co">{{ e.company }}</div>
+        <ul>
+          @for (d of e.duties.slice(0, 2); track $index) {
+            <li>{{ d }}</li>
+          }
+        </ul>
+        <div class="mono when">
+          {{ e.role }}<br />{{ e.timestamp }}
+        </div>
+      </div>
+    }
+
+    <footer id="contact">
+      <span>mugishaje@gmail.com</span>
+      <span class="mono socials">
+        @for (s of links; track s.url) {
+          <a [href]="s.url" target="_blank" rel="noopener" [attr.aria-label]="s.label">
+            <i [class]="s.icon"></i>
+          </a>
+        }
+      </span>
+    </footer>
+  </div>
+</div>

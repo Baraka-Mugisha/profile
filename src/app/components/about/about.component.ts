@@ -11,9 +11,7 @@ import { Achievement, Service } from '../../types';
 export class AboutComponent  {
 
   achievements: Achievement[] = [
-    { number: '10+', description: 'Happy clients' },
     { number: '5+', description: 'Years of experience' },
-    { number: '20+', description: 'Projects done' },
   ];
 
   socials = PERSONAL_INFO;
@@ -24,7 +22,7 @@ export class AboutComponent  {
       tags: ['Frontend', 'Backend', 'APIs'],
       description:
         'Building scalable web applications with React, Angular, Vue, Node.js, NestJS, and PostgreSQL/MongoDB.',
-      image: '/img/services/1200x900_s01.webp',
+      image: '/img/services/fullstack.webp',
     },
     {
       title: 'Mobile App<br>Development',
@@ -38,7 +36,7 @@ export class AboutComponent  {
       tags: ['Docker', 'Kubernetes', 'CI/CD'],
       description:
         'Infrastructure automation with Docker, Kubernetes, Terraform, and Jenkins for seamless deployment pipelines.',
-      image: '/img/services/devops2.png',
+      image: '/img/services/devops.png',
     },
     {
       title: 'Technical<br>Leadership',

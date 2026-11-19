@@ -1,0 +1,68 @@
+<div class="page">
+  <div class="wrap">
+    <header class="top">
+      <span class="mono">{{ info.name }} — Index</span>
+      <nav class="mono">
+        <a href="#work">Work</a>
+        <a href="#experience">Exp</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Full-stack<br />engineer</h1>
+      <div class="hero-meta">
+        <p>
+          Client web apps, back-office tools and mobile features. Insurance platforms with USSD
+          services and premium-pricing logic.
+        </p>
+        <div class="mono muted">
+          {{ info.location }}<br />
+          Working since 2020<br />
+          <a href="mailto:mugishaje@gmail.com">mugishaje&#64;gmail.com</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="work">
+      <h2 class="sec-title">Selected work</h2>
+      <div class="index-head mono">
+        <span>No.</span><span>Project</span><span>What it did</span><span class="x">Stack</span>
+      </div>
+      @for (c of cases; track c.title; let i = $index) {
+        <div class="index-row">
+          <span class="mono">{{ '0' + (i + 1) }}</span>
+          <span class="t">{{ c.title }}</span>
+          <span class="d">{{ c.summary }}</span>
+          <span class="mono x">{{ c.stack.join(' · ') }}</span>
+        </div>
+      }
+    </section>
+
+    <section class="sec" id="experience">
+      <h2 class="sec-title">Experience</h2>
+      @for (e of experiences; track e.id) {
+        <div class="exp-row">
+          <span class="co">{{ e.company }}</span>
+          <ul>
+            @for (d of e.duties.slice(0, 2); track $index) {
+              <li>{{ d }}</li>
+            }
+          </ul>
+          <span class="mono">{{ e.role }} · {{ e.timestamp }}</span>
+        </div>
+      }
+    </section>
+
+    <footer id="contact">
+      <a class="cta" href="mailto:mugishaje@gmail.com">Start a<br />project</a>
+      <div class="mono socials">
+        @for (s of links; track s.url) {
+          <a class="l" [href]="s.url" target="_blank" rel="noopener" [attr.aria-label]="s.label">
+            <i [class]="s.icon"></i>
+          </a>
+        }
+      </div>
+    </footer>
+  </div>
+</div>

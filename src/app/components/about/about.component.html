@@ -1,37 +1,20 @@
 <section id="about" class="inner about py-48">
   <div class="content__block section-grid-title mb-12 md:mb-16 lg:mb-24">
-    <p
-      class="h2__subtitle animate-in-up flex gap-2 items-center btn !text-xs md:!text-sm !py-2 md:!py-3 !px-4 md:!px-5"
-    >
-      <i class="fa-solid fa-user text-base md:text-xl lg:text-2xl text-t-accent"></i>
-      <span>About Me</span>
-    </p>
     <h2 class="h2__title animate-in-up text-2xl md:text-5xl lg:text-6xl">
-      Turning complex problems into simple IT solutions
+      Insurance platforms and client apps, shipped end to end
     </h2>
   </div>
 
-  <div class="my-12 md:my-16 lg:my-24">
-    <div class="flex flex-col sm:flex-row md:items-stretch gap-4 md:gap-6">
-      <div
-        *ngFor="let achievement of achievements"
-        class="flex-1 min-h-[12rem] md:min-h-[14rem] lg:min-h-[12rem] flex flex-col grid-item animate-card-3"
-      >
-        <div
-          class="bg-base !text-t-medium border border-stroke-elements rounded-lg md:rounded-xl p-8 md:p-10 lg:p-8 text-center h-full flex flex-col justify-center transition-all duration-medium hover:-translate-y-2 hover:border-accent"
-        >
-          <p
-            class="font-accent text-[2.8rem] sm:text-[3.2rem] md:text-[4rem] lg:text-[4.8rem] font-bold text-accent mb-3 md:mb-5 leading-none"
-          >
-            {{ achievement.number }}
-          </p>
-          <p class="text-sm md:text-base font-medium text-t-medium m-0">
-            {{ achievement.description }}
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <p class="mb-12 md:mb-16 max-w-3xl text-lg md:text-2xl text-t-medium animate-in-up">
+    I'm the founder of
+    <a class="text-link-bold" href="https://www.cyviq.rw/" target="_blank" rel="noopener">Cyviq Ltd</a>.
+    I also created
+    <a class="text-link-bold" href="https://www.nupta.rw/" target="_blank" rel="noopener">Nupta</a>
+    and
+    <a class="text-link-bold" href="https://www.ruffi.app/" target="_blank" rel="noopener">Ruffi</a>,
+    and I run their software, SEO, social media and marketing. Currently building Jovvi, Lefli and
+    LabelVet.
+  </p>
 
   <div class="mb-12 md:mb-16 lg:mb-24">
     <div class="w-full">
@@ -63,7 +46,7 @@
               "
             >
               <span>Download CV</span>
-              <i class="ph-bold ph-download-simple"></i>
+              <i class="fa-solid fa-download"></i>
             </a>
           </div>
         </div>
@@ -146,7 +129,7 @@
             >
               <img
                 [src]="service.image"
-                alt="Service Image"
+                [alt]="service.title.replace('<br>', ' ')"
                 class="w-full h-auto object-cover transition-transform duration-medium hover:scale-105"
               />
             </div>

@@ -15,13 +15,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'Phosphor';
-  src: url('/fonts/Phosphor/Phosphor.woff2') format('woff2'),
-    url('/fonts/Phosphor/Phosphor.ttf') format('truetype');
-  font-display: swap;
-}
-
 /* CSS Variables */
 :root {
   --_size: 1.6rem;
@@ -40,51 +33,51 @@
   --base--light: #e6ebf4;
   --base-tint--light: #ebf0f7;
   --base-shade--light: #bdc1c8;
-  --accent--light: #aa70e0;
-  --secondary--light: #7059e2;
-  --secondary-rgba--light: rgba(112, 89, 226, 0.3);
+  --accent--light: #b8481f;
+  --secondary--light: #d9793f;
+  --secondary-rgba--light: rgba(217, 121, 63, 0.3);
   --stroke-controls--light: #a8b0c1;
   --stroke-controls-neutral--light: rgba(0, 0, 0, 0.3);
   --stroke-elements--light: #d1d5e0;
   --t-bright--light: #22232c;
   --t-medium--light: #424550;
   --t-muted--light: #666a79;
-  --t-accent--light: #8f56cc;
-  --t-secondary--light: #5d4ec4;
+  --t-accent--light: #a83f1a;
+  --t-secondary--light: #7a3a16;
   --t-disabled--light: #717586;
   --t-placeholder--light: #969bb2;
   --base-opp--light: #111111;
   --t-opp-bright--light: #ebf0f7;
   --t-opp-medium--light: #c7c6d3;
   --t-opp-muted--light: #a1a1af;
-  --gradient-one--light: #cec4ef;
-  --gradient-two--light: #f5c5cd;
-  --gradient-three--light: #ac8fe3;
+  --gradient-one--light: #f3d5c3;
+  --gradient-two--light: #f6e6cf;
+  --gradient-three--light: #e0a27c;
 
   /* dark color scheme */
   --base--dark: #0a0a0a;
   --base-tint--dark: #1a1a1a;
   --base-shade--dark: #050505;
-  --accent--dark: #d4a5f5;
-  --secondary--dark: #e7b4d8;
-  --secondary-rgba--dark: rgba(112, 89, 226, 0.3);
+  --accent--dark: #ff8a4c;
+  --secondary--dark: #ffc08f;
+  --secondary-rgba--dark: rgba(255, 138, 76, 0.3);
   --stroke-controls--dark: #3a3a3a;
   --stroke-controls-neutral--dark: rgba(255, 255, 255, 0.3);
   --stroke-elements--dark: #2a2a2a;
   --t-bright--dark: #ebf0f7;
   --t-medium--dark: #c7c6d3;
   --t-muted--dark: #a1a1af;
-  --t-accent--dark: #aa70e0;
-  --t-secondary--dark: #7059e2;
+  --t-accent--dark: #ff8a4c;
+  --t-secondary--dark: #f2a06b;
   --t-disabled--dark: #717586;
   --t-placeholder--dark: #666a79;
   --base-opp--dark: #ebf0f7;
   --t-opp-bright--dark: #22232c;
   --t-opp-medium--dark: #424550;
   --t-opp-muted--dark: #666a79;
-  --gradient-one--dark: #cec4ef;
-  --gradient-two--dark: #f5c5cd;
-  --gradient-three--dark: #ac8fe3;
+  --gradient-one--dark: #5a2e1c;
+  --gradient-two--dark: #4a2a1d;
+  --gradient-three--dark: #8a4a2c;
 
   /* default to light theme */
   --base: var(--base--light);
@@ -526,4 +519,15 @@ a:hover {
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
+}
+
+/* Browser defaults themed from the palette */
+::selection {
+  background: var(--accent);
+  color: var(--base);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }

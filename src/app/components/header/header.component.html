@@ -7,6 +7,7 @@
       <li class="m-0 flex gap-2" *ngFor="let item of menuItems">
         <a
           [href]="item.href"
+          [attr.aria-label]="item.caption"
           (click)="scrollToSection(item.sectionId, $event)"
           [class]="
             itemClasses(item.sectionId) + ' min-w-[2.5rem] h-10 md:h-11 lg:h-12 px-3 md:px-4'
@@ -47,7 +48,7 @@
     >
       <span
         class="hidden lg:block relative text-transparent overflow-hidden transition-[0.3s] [text-shadow:0_0_var(--t-opp-bright),0_5rem_var(--t-opp-bright)] lg:group-hover:[text-shadow:0_-5rem_var(--t-opp-bright),0_0_var(--t-opp-bright)] 3xl:leading-[6rem] 3xl:[text-shadow:0_0_var(--t-opp-bright),0_6rem_var(--t-opp-bright)] 3xl:group-hover:[text-shadow:0_-6rem_var(--t-opp-bright),0_0_var(--t-opp-bright)]"
-        >Let's Talk</span
+        >Get in touch</span
       >
       <i
         class="fa-solid fa-comment block relative leading-[4.4rem] text-t-opp-bright overflow-hidden transition-[0.3s] md:ml-2 text-[1.8rem] lg:text-transparent lg:leading-[5rem] lg:text-[1.8rem] lg:[text-shadow:0_0_var(--t-opp-bright),0_5rem_var(--t-opp-bright)] lg:group-hover:[text-shadow:0_-5rem_var(--t-opp-bright),0_0_var(--t-opp-bright)] 3xl:leading-[6rem] 3xl:text-[2.2rem] 3xl:[text-shadow:0_0_var(--t-opp-bright),0_6rem_var(--t-opp-bright)] 3xl:group-hover:[text-shadow:0_-6rem_var(--t-opp-bright),0_0_var(--t-opp-bright)]"

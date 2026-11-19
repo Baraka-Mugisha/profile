@@ -1,9 +1,9 @@
 <div
   id="avatar"
-  class="relative w-[calc(100%-3rem)] h-auto mx-auto pt-6 pb-24 z-[9] origin-top-left md:pt-12 md:pb-[7.5rem] md:w-[calc(100%-12rem)] lg:fixed lg:top-12 lg:left-12 lg:w-[300px] lg:h-[calc(100%-6rem)] lg:m-0 lg:p-0 xl:left-24 2xl:top-20 2xl:left-32 2xl:w-[400px] 2xl:h-[calc(100%-10rem)] 3xl:left-40"
+  class="relative w-[calc(100%-3rem)] h-auto mx-auto pt-6 pb-12 z-[9] origin-top-left md:pt-12 md:pb-[7.5rem] md:w-[calc(100%-12rem)] lg:fixed lg:top-12 lg:left-12 lg:w-[300px] lg:h-[calc(100%-6rem)] lg:m-0 lg:p-0 xl:left-24 2xl:top-20 2xl:left-32 2xl:w-[400px] 2xl:h-[calc(100%-10rem)] 3xl:left-40"
 >
   <div
-    class="relative w-full h-full p-12 flex flex-col lg:justify-between before:content-[''] before:block before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-base-tint before:border before:border-stroke-elements before:rounded-xl 2xl:p-20"
+    class="relative w-full h-full p-8 md:p-12 flex flex-col lg:justify-between before:content-[''] before:block before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-base-tint before:border before:border-stroke-elements before:rounded-xl 2xl:p-20"
   >
     <div class="relative mb-12 2xl:mb-[3.6rem]">
       <div class="mb-10 2xl:mb-12 flex items-center">
@@ -15,7 +15,7 @@
           </p>
         </div>
       </div>
-      <div class="w-full rounded-xl overflow-hidden">
+      <div class="w-2/3 mx-auto md:w-full rounded-xl overflow-hidden">
         <img
           [src]="personalInfo.avatar"
           [alt]="personalInfo.name"
@@ -49,6 +49,7 @@
             <a
               class="w-[3.8rem] h-[3.8rem] md:w-[4.5rem] md:h-[4.5rem] p-0 flex items-center justify-center rounded-s text-[1.6rem] md:text-[2rem] btn"
               [href]="social.url"
+              [attr.aria-label]="social.label"
               target="_blank"
             >
               <i [class]="social.icon + ' text-lg md:text-xl lg:text-2xl'" aria-hidden="true"></i>
@@ -58,7 +59,7 @@
       </div>
       <div class="avatar__btnholder">
         <a class="btn btn-default btn-fullwidth btn-hover btn-hover-accent" href="#contact">
-          <span class="btn-caption">Let's Work Together!</span>
+          <span class="btn-caption">Get in touch</span>
         </a>
       </div>
     </div>

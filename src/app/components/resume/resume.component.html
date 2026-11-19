@@ -1,14 +1,8 @@
 <section id="resume" class="inner resume py-48">
   <div class="content__block block-large mx-auto mb-24">
-    <p class="h2__subtitle animate-in-up flex gap-2 items-center btn !text-sm !py-3 !px-5">
-      <i class="fa-solid fa-star text-base md:text-lg !text-t-accent"></i>
-      <span>Resume</span>
-    </p>
-    <h2 class="h2__title animate-in-up">Education and practical experience</h2>
+    <h2 class="h2__title animate-in-up">Experience and education</h2>
     <p class="text-3xl leading-[1.7] text-t-medium mt-10 mx-auto animate-in-up">
-      A quick look at my journey: recent roles, responsibilities and what I worked on, followed by
-      courses and learning that shaped my approach. It’s a snapshot of practical experience backed
-      by continuous education.
+      Roles since 2020, and the degree behind them.
     </p>
   </div>
 
@@ -54,7 +48,7 @@
     </div>
   </div>
 
-  <!-- <div class="content__block block-large">
+  <div class="content__block block-large">
     <div class="mb-16">
       <h3
         class="relative pb-6 mb-0 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-24 after:h-[0.2rem] after:bg-accent after:rounded-[0.1rem] animate-in-up"
@@ -76,24 +70,21 @@
         </div>
         <div class="col-12 col-md-5">
           <h5 class="mb-3 text-t-bright animate-in-up">{{ item.title }}</h5>
-          <p class="text-sm text-t-medium mb-0 animate-in-up">
-            Course by
-            <a [href]="item.sourceLink" class="text-link-bold" target="_blank">{{ item.source }}</a>
-          </p>
+          <p class="text-sm text-t-medium mb-0 animate-in-up">{{ item.source }}</p>
         </div>
         <div class="col-12 col-md-5">
           <p class="small mb-0 leading-relaxed animate-in-up !text-3xl">{{ item.description }}</p>
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 
   <div class="content__block">
     <div class="mb-16">
       <h3
         class="relative pb-6 mb-0 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-24 after:h-[0.2rem] after:bg-accent after:rounded-[0.1rem] animate-in-up"
       >
-        My favourite tools
+        Tools and technologies
       </h3>
     </div>
   </div>
@@ -105,7 +96,7 @@
         class="flex-[0_0l_auto] grid-item-s px-12 py-8 animate-card-5 border-stroke-elements border rounded-xl flex flex-col items-center min-w-[12rem] md:min-w-[18rem] transition-all duration-medium hover:-translate-y-2 hover:border-accent hover:bg-accent group"
       >
         <img
-          class="object-contain animate-in-up w-16 h-16 md:w-20 md:h-20"
+          class="object-contain animate-in-up w-10 h-10 md:w-12 md:h-12"
           [src]="tool.icon"
           [alt]="tool.name + ' Logo'"
           loading="lazy"

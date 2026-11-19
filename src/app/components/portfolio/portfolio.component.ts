@@ -3,7 +3,7 @@ import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentfulService } from '../../services/contentful.service';
 import { trigger, transition, style, animate } from '@angular/animations';
-import { DUMMY_PROJECTS } from '../../data/projects';
+import { EXTRA_PROJECTS, FALLBACK_PROJECTS, orderProjects } from '../../data/projects';
 
 @Component({
   selector: 'app-portfolio',
@@ -22,7 +22,7 @@ import { DUMMY_PROJECTS } from '../../data/projects';
 })
 export class PortfolioComponent implements OnInit {
   selectedItem: Project | null = null;
-  portfolioItems = signal<Project[]>([...DUMMY_PROJECTS]);
+  portfolioItems = signal<Project[]>([...FALLBACK_PROJECTS]);
   isLoading = signal(true);
 
   constructor(private contentfulService: ContentfulService) {}
@@ -35,15 +35,15 @@ export class PortfolioComponent implements OnInit {
     this.contentfulService.getProjects().subscribe({
       next: (data) => {
         if (Array.isArray(data) && data.length > 0) {
-          this.portfolioItems.set(data);
+          this.portfolioItems.set(orderProjects([...data, ...EXTRA_PROJECTS]));
         } else {
-          this.portfolioItems.set([...DUMMY_PROJECTS]);
+          this.portfolioItems.set([...FALLBACK_PROJECTS]);
         }
         this.isLoading.set(false);
       },
       error: (err) => {
         console.error('Error loading projects:', err);
-        this.portfolioItems.set([...DUMMY_PROJECTS]);
+        this.portfolioItems.set([...FALLBACK_PROJECTS]);
         this.isLoading.set(false);
       },
     });

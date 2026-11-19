@@ -1,13 +1,7 @@
 <section id="contact" class="inner py-24 md:py-40 lg:py-48">
   <div class="content__block mx-auto">
-    <p
-      class="h2__subtitle animate-in-up flex gap-2 items-center btn !text-xs md:!text-sm !py-2 md:!py-3 !px-4 md:!px-5"
-    >
-      <i class="fa-solid fa-envelope text-base md:text-xl lg:text-2xl text-t-accent"></i>
-      <span>Contact</span>
-    </p>
     <h2 class="h2__title animate-in-up text-3xl md:text-5xl lg:text-6xl">
-      Let's make something awesome together!
+      Got a project or a role? Let's talk.
     </h2>
   </div>
 
@@ -20,7 +14,7 @@
         [class.opacity-0]="!showSuccessMessage"
         [class.invisible]="!showSuccessMessage"
       >
-        <i class="ph-bold ph-smiley text-[6rem] md:text-[4rem] text-accent mb-8"></i>
+        <i class="fa-regular fa-face-smile text-[6rem] md:text-[4rem] text-accent mb-8"></i>
         <p class="text-2xl md:text-[2rem] font-semibold text-t-bright mb-4">Done!</p>
         <span class="text-base text-t-medium"
           >Thanks for your message. I'll get back as soon as possible.</span
@@ -115,9 +109,9 @@
                 <span class="btn-caption">
                   {{ isSubmitting ? 'Sending...' : 'Send Message' }}
                 </span>
-                <i class="ph-bold ph-paper-plane-tilt" *ngIf="!isSubmitting"></i>
+                <i class="fa-solid fa-paper-plane" *ngIf="!isSubmitting"></i>
                 <i
-                  class="ph-bold ph-spinner animate-[rotate_1s_linear_infinite]"
+                  class="fa-solid fa-spinner animate-[rotate_1s_linear_infinite]"
                   *ngIf="isSubmitting"
                 ></i>
               </button>
@@ -128,35 +122,15 @@
     </div>
   </div>
 
-  <div class="content__block grid-block">
-    <div
-      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 my-16 md:my-20 lg:my-24"
-    >
-      <div *ngFor="let social of socialLinks" class="grid-item-s animate-card-5">
-        <div
-          class="relative w-full aspect-[4/3] bg-base border border-stroke-elements rounded-xl flex justify-center text-2xl text-t-bright transition-all duration-medium cursor-pointer hover:-translate-y-2 hover:border-accent hover:bg-accent hover:text-base-tint items-center"
-        >
-          <i [class]="social.icon + ' text-3xl md:text-4xl lg:text-5xl'" aria-hidden="true"></i>
-          <a
-            class="absolute top-0 left-0 w-full h-full z-[1]"
-            [href]="social.url"
-            target="_blank"
-          ></a>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div class="content__block">
     <div class="mx-auto mb-16 md:mb-20 lg:mb-24">
       <p class="text-2xl md:text-3xl lg:text-4xl text-t-medium m-0 animate-in-up">
-        Want to know more about me, tell me about your project or just to say hello?
+        Hiring or building something? Send me the brief, or
         <a
           class="text-link-bold"
           href="mailto:mugishaje@gmail.com?subject=Message%20from%20your%20site"
-          >Drop me a line</a
-        >
-        and I'll get back as soon as possible.
+          >drop me a line</a
+        >.
       </p>
     </div>
   </div>
