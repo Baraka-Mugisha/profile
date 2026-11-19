@@ -66,6 +66,22 @@ export class ResumeComponent {
     { name: 'Kubernetes', icon: icon('kubernetes', '326CE5') },
     { name: 'Terraform', icon: icon('terraform', '7B42BC') },
     { name: 'DigitalOcean', icon: icon('digitalocean', '0080FF') },
+    { name: 'Expo', icon: icon('expo', 'FFFFFF') },
+    { name: 'Convex', icon: icon('convex', 'EE342F') },
+    { name: 'Prisma', icon: icon('prisma', '5A67D8') },
+    { name: 'Supabase', icon: icon('supabase', '3ECF8E') },
+    { name: 'Redux', icon: icon('redux', '764ABC') },
+    { name: 'Zod', icon: icon('zod', '3E67B1') },
+    { name: 'TanStack Query', icon: icon('reactquery', 'FF4154') },
+    { name: 'React Hook Form', icon: icon('reacthookform', 'EC5990') },
+    { name: 'Framer Motion', icon: icon('framer', 'FFFFFF') },
+    { name: 'Vite', icon: icon('vite', '646CFF') },
+    { name: 'ESLint', icon: icon('eslint', '4B32C3') },
+    { name: 'Prettier', icon: icon('prettier', 'F7B93E') },
+    { name: 'Mixpanel', icon: icon('mixpanel', '7856FF') },
+    { name: 'Clerk', icon: icon('clerk', '6C47FF') },
+    { name: 'GitHub', icon: icon('github', 'FFFFFF') },
+    { name: 'Render', icon: icon('render', '46E3B7') },
   ];
 
   getStarsArray(rating: number): number[] {
