@@ -24,13 +24,13 @@ export class HeaderComponent implements AfterViewInit {
 
   menuItems = [
     { href: '#home', caption: 'Home', icon: 'fa-solid fa-house', sectionId: 'home' },
+    { href: '#about', caption: 'About Me', icon: 'fa-solid fa-user', sectionId: 'about' },
     {
       href: '#portfolio',
       caption: 'Portfolio',
       icon: 'fa-solid fa-layer-group',
       sectionId: 'portfolio',
     },
-    { href: '#about', caption: 'About Me', icon: 'fa-solid fa-user', sectionId: 'about' },
     { href: '#resume', caption: 'Resume', icon: 'fa-solid fa-file-lines', sectionId: 'resume' },
     { href: '#contact', caption: 'Contact', icon: 'fa-solid fa-envelope', sectionId: 'contact' },
   ];
