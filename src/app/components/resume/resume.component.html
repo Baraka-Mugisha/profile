@@ -77,34 +77,4 @@
     </div>
   </div>
 
-  <div class="content__block">
-    <div class="mb-16">
-      <h3
-        class="relative pb-6 mb-0 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-24 after:h-[0.2rem] after:bg-accent after:rounded-[0.1rem] animate-in-up"
-      >
-        Tools and technologies
-      </h3>
-    </div>
-  </div>
-
-  <div class="content__block grid-block block-large">
-    <div class="flex justify-start flex-wrap gap-8 md:gap-6">
-      <div
-        *ngFor="let tool of tools"
-        class="flex-[0_0l_auto] grid-item-s px-12 py-8 animate-card-5 border-stroke-elements border rounded-xl flex flex-col items-center min-w-[12rem] md:min-w-[18rem] transition-all duration-medium hover:-translate-y-2 hover:border-accent hover:bg-accent group"
-      >
-        <img
-          class="object-contain animate-in-up w-10 h-10 md:w-12 md:h-12"
-          [src]="tool.icon"
-          [alt]="tool.name + ' Logo'"
-          loading="lazy"
-        />
-        <div
-          class="text-3xl font-semibold m-0 text-t-bright transition-colors duration-medium group-hover:text-base-tint animate-in-up mt-4"
-        >
-          {{ tool.name }}
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
