@@ -1,20 +1,9 @@
 <section id="about" class="inner about py-48">
   <div class="content__block section-grid-title mb-12 md:mb-16 lg:mb-24">
     <h2 class="h2__title animate-in-up text-2xl md:text-5xl lg:text-6xl">
-      Insurance platforms and client apps, shipped end to end
+      I am a software engineer.
     </h2>
   </div>
-
-  <p class="mb-12 md:mb-16 max-w-3xl text-lg md:text-2xl text-t-medium animate-in-up">
-    I'm the founder of
-    <a class="text-link-bold" href="https://www.cyviq.rw/" target="_blank" rel="noopener">Cyviq Ltd</a>.
-    I also created
-    <a class="text-link-bold" href="https://www.nupta.rw/" target="_blank" rel="noopener">Nupta</a>
-    and
-    <a class="text-link-bold" href="https://www.ruffi.app/" target="_blank" rel="noopener">Ruffi</a>,
-    and I run their software, SEO, social media and marketing. Currently building Jovvi, Lefli and
-    LabelVet.
-  </p>
 
   <div class="mb-12 md:mb-16 lg:mb-24">
     <div class="w-full">
@@ -23,19 +12,18 @@
           class="w-full xl:w-2/3 pr-0 xl:pr-16 mb-12 md:mb-16 xl:mb-0 grid-item pt-2 md:pt-6 2xl:pt-4 text-base sm:text-xl md:text-2xl lg:text-3xl leading-relaxed md:leading-[2.2rem] lg:leading-[2.6rem]"
         >
           <p class="animate-in-up mb-6 md:mb-8">
-            I’m a software engineer who enjoys turning ideas into practical, friendly products. I
-            work across frontend, backend and mobile, focusing on experiences that feel simple and
-            get the job done.
+            I have been building software since 2020. I started on client projects in South Africa,
+            India and Rwanda, then moved into full-time product roles at RemaTech and VTG-Hub in
+            Kigali.
           </p>
           <p class="animate-in-up mb-6 md:mb-8">
-            My approach is straightforward: clean code, small iterations, and steady delivery. I
-            lean on good tests, CI/CD and cloud-native tools so features ship smoothly and scale
-            when they need to.
+            At VTG-Hub I delivered client platforms, internal dashboards and back-office tools. At
+            Kitech I led an engineering team through client delivery, code review and production
+            reliability.
           </p>
           <p class="animate-in-up mb-6 md:mb-8">
-            I like collaborating with teams and bridging product goals with practical
-            engineering-polishing the rough edges and helping ideas reach production without the
-            drama.
+            Today I am the founder of Cyviq, where I build and run my own products, including Ruffi
+            and Nupta. I am developing Jovvi, Lefli and LabelVet.
           </p>
           <div class="mt-6 md:mt-10 2xl:mt-12 3xl:mt-[3.2rem] animate-in-up">
             <a
@@ -107,30 +95,22 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-16">
         <div *ngFor="let service of services" class="w-full grid-item animate-card-2">
           <div
-            class="bg-base border border-stroke-elements rounded-lg md:rounded-xl p-8 md:p-10 lg:p-12 h-full overflow-hidden flex flex-col transition-all duration-medium hover:-translate-y-2 hover:border-accent"
+            class="bg-base border border-stroke-elements rounded-lg md:rounded-xl p-8 md:p-10 lg:p-12 h-full overflow-hidden flex gap-6 md:gap-8 items-start transition-all duration-medium hover:-translate-y-2 hover:border-accent"
           >
-            <div class="mb-6 md:mb-8 lg:mb-10">
+            <div class="flex-1 min-w-0 mb-0">
               <h4
                 class="mb-4 md:mb-6 animate-in-up text-2xl md:text-3xl lg:text-4xl"
                 [innerHTML]="service.title"
               ></h4>
-              <div class="flex flex-wrap gap-2 md:gap-3 mb-4 md:mb-6 animate-in-up">
-                <span
-                  *ngFor="let tag of service.tags"
-                  class="rounded-tag tag-outline text-xs md:text-sm"
-                >
-                  {{ tag }}
-                </span>
-              </div>
-              <p class="text-xs md:text-sm mb-0 animate-in-up">{{ service.description }}</p>
+              <p class="text-[1.6rem] md:text-[1.8rem] leading-relaxed mb-0 animate-in-up">
+                {{ service.description }}
+              </p>
             </div>
-            <div
-              class="-mx-8 md:-mx-10 lg:-mx-12 -mb-8 md:-mb-10 lg:-mb-12 overflow-hidden flex animate-in-up"
-            >
+            <div class="shrink-0 w-20 h-20 md:w-28 md:h-28 rounded-lg overflow-hidden">
               <img
                 [src]="service.image"
                 [alt]="service.title.replace('<br>', ' ')"
-                class="w-full h-auto object-cover transition-transform duration-medium hover:scale-105"
+                class="w-full h-full object-cover"
               />
             </div>
           </div>

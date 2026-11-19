@@ -19,30 +19,22 @@ export class AboutComponent  {
   services: Service[] = [
     {
       title: 'Full Stack<br>Development',
-      tags: ['Frontend', 'Backend', 'APIs'],
-      description:
-        'Building scalable web applications with React, Angular, Vue, Node.js, NestJS, and PostgreSQL/MongoDB.',
+      description: 'Web and mobile products, from the backend to the interface.',
       image: '/img/services/fullstack.webp',
     },
     {
       title: 'Mobile App<br>Development',
-      tags: ['React Native', 'Cross-platform', 'iOS/Android'],
-      description:
-        'Creating native mobile experiences using React Native, Expo, and Ionic for both iOS and Android platforms.',
+      description: 'Mobile apps for iOS and Android.',
       image: '/img/services/mobile.webp',
     },
     {
       title: 'Cloud & DevOps<br>Solutions',
-      tags: ['Docker', 'Kubernetes', 'CI/CD'],
-      description:
-        'Infrastructure automation with Docker, Kubernetes, Terraform, and Jenkins for seamless deployment pipelines.',
+      description: 'Deployment, infrastructure and release pipelines.',
       image: '/img/services/devops.png',
     },
     {
       title: 'Technical<br>Leadership',
-      tags: ['Team Lead', 'Code Review', 'Mentoring'],
-      description:
-        'Leading development teams, conducting code reviews, and mentoring developers to maintain high-quality standards.',
+      description: 'Leading engineering teams and raising code quality.',
       image: '/img/services/leadership.png',
     },
   ];

@@ -66,7 +66,7 @@ export interface Achievement {
 
 export interface Service {
   title: string;
-  tags: string[];
+  tags?: string[];
   description: string;
   image: string;
 }
