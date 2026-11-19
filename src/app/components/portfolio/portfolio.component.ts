@@ -1,9 +1,8 @@
 import { Project } from './../../types';
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ContentfulService } from '../../services/contentful.service';
 import { trigger, transition, style, animate } from '@angular/animations';
-import { EXTRA_PROJECTS, FALLBACK_PROJECTS, orderProjects } from '../../data/projects';
+import { PORTFOLIO_PROJECTS, orderProjects } from '../../data/portfolio';
 
 @Component({
   selector: 'app-portfolio',
@@ -20,34 +19,9 @@ import { EXTRA_PROJECTS, FALLBACK_PROJECTS, orderProjects } from '../../data/pro
     ]),
   ],
 })
-export class PortfolioComponent implements OnInit {
+export class PortfolioComponent {
   selectedItem: Project | null = null;
-  portfolioItems = signal<Project[]>([...FALLBACK_PROJECTS]);
-  isLoading = signal(true);
-
-  constructor(private contentfulService: ContentfulService) {}
-
-  ngOnInit(): void {
-    this.loadProjects();
-  }
-
-  private loadProjects(): void {
-    this.contentfulService.getProjects().subscribe({
-      next: (data) => {
-        if (Array.isArray(data) && data.length > 0) {
-          this.portfolioItems.set(orderProjects([...data, ...EXTRA_PROJECTS]));
-        } else {
-          this.portfolioItems.set([...FALLBACK_PROJECTS]);
-        }
-        this.isLoading.set(false);
-      },
-      error: (err) => {
-        console.error('Error loading projects:', err);
-        this.portfolioItems.set([...FALLBACK_PROJECTS]);
-        this.isLoading.set(false);
-      },
-    });
-  }
+  portfolioItems = signal<Project[]>(orderProjects(PORTFOLIO_PROJECTS));
 
   openLightbox(item: Project): void {
     this.selectedItem = item;

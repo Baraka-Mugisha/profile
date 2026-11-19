@@ -26,7 +26,7 @@ export class ContactComponent implements OnInit {
   contactInfo: ContactInfo[] = [
     {
       title: 'Location',
-      value: 'Kigali, Rwanda',
+      value: 'Kigali, Rw',
       link: 'https://maps.app.goo.gl/Kigali',
     },
     {

@@ -3,7 +3,7 @@ import { PersonalInfo, SocialLink } from '../types';
 export const personalInfo: PersonalInfo = {
   name: 'Jean Pierre Baraka',
   specialization: 'Full-stack engineer',
-  location: 'Kigali, Rwanda',
+  location: 'Kigali, Rw',
   avatar: '/img/socials/profile.jpg',
 };
 

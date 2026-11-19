@@ -5,7 +5,7 @@ export const PERSONAL_INFO = {
   email: 'mugishaje@gmail.com',
   phone: '+250785459575',
   phoneFormatted: '+250 785 459 575',
-  location: 'Kigali, Rwanda',
+  location: 'Kigali, Rw',
   locationLink: 'https://maps.app.goo.gl/Kigali',
   specialization: 'Software Engineer',
   title: 'Software Developer',

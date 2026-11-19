@@ -40,7 +40,7 @@ export interface EducationItem {
   title: string;
   source: string;
   sourceLink: string;
-  description: string;
+  description?: string;
 }
 
 export interface Tool {

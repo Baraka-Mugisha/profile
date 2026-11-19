@@ -1,7 +1,7 @@
 import { PERSONAL_INFO } from './../../shared/constants';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Achievement, Service } from '../../types';
+import { EducationItem, Service } from '../../types';
 
 @Component({
   selector: 'app-about',
@@ -10,11 +10,16 @@ import { Achievement, Service } from '../../types';
 })
 export class AboutComponent  {
 
-  achievements: Achievement[] = [
-    { number: '5+', description: 'Years of experience' },
-  ];
-
   socials = PERSONAL_INFO;
+
+  education: EducationItem[] = [
+    {
+      date: 'Class of 2025',
+      title: 'BSc in Information Technology',
+      source: 'Mount Kenya University, Kigali Campus',
+      sourceLink: '',
+    },
+  ];
 
   services: Service[] = [
     {

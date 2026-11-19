@@ -1,6 +1,6 @@
 <section id="resume" class="inner resume py-48">
   <div class="content__block block-large mx-auto mb-24">
-    <h2 class="h2__title animate-in-up">Experience and education</h2>
+    <h2 class="h2__title animate-in-up">Experience</h2>
     <p class="text-3xl leading-[1.7] text-t-medium mt-10 mx-auto animate-in-up">
       Roles since 2020, and the degree behind them.
     </p>
@@ -30,8 +30,7 @@
             {{ item.contractType }} at
             <a [href]="item.companySite || '#'" class="text-link-bold" target="_blank">{{
               item.company
-            }}</a>
-            in {{ item.location }}
+            }}</a> in {{ item.location }}
           </p>
         </div>
         <ul class="md:col-span-7 flex flex-col gap-4 m-0 p-0 list-none">
@@ -42,37 +41,6 @@
             {{ duty }}
           </li>
         </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="content__block block-large">
-    <div class="mb-16">
-      <h3
-        class="relative pb-6 mb-0 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-24 after:h-[0.2rem] after:bg-accent after:rounded-[0.1rem] animate-in-up"
-      >
-        My education
-      </h3>
-    </div>
-
-    <div class="container-fluid p-0 mb-24">
-      <div
-        *ngFor="let item of education"
-        class="row g-0 py-10 border-b border-stroke-elements transition-all duration-medium last:border-b-0 hover:bg-base-tint hover:-mx-8 hover:px-8 hover:rounded-m hover:border-b-transparent md:py-8 md:hover:mx-0 md:hover:px-0 md:hover:bg-transparent animate-in-up"
-      >
-        <div class="col-12 col-md-2">
-          <span
-            class="font-accent text-sm md:text-[1.3rem] font-semibold text-accent block mb-4 animate-in-up"
-            >{{ item.date }}</span
-          >
-        </div>
-        <div class="col-12 col-md-5">
-          <h5 class="mb-3 text-t-bright animate-in-up">{{ item.title }}</h5>
-          <p class="text-sm text-t-medium mb-0 animate-in-up">{{ item.source }}</p>
-        </div>
-        <div class="col-12 col-md-5">
-          <p class="small mb-0 leading-relaxed animate-in-up !text-3xl">{{ item.description }}</p>
-        </div>
       </div>
     </div>
   </div>

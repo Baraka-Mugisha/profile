@@ -12,9 +12,8 @@
           class="w-full xl:w-2/3 pr-0 xl:pr-16 mb-12 md:mb-16 xl:mb-0 grid-item pt-2 md:pt-6 2xl:pt-4 text-base sm:text-xl md:text-2xl lg:text-3xl leading-relaxed md:leading-[2.2rem] lg:leading-[2.6rem]"
         >
           <p class="animate-in-up mb-6 md:mb-8">
-            I have been building software since 2020. I started on client projects in South Africa,
-            India and Rwanda, then moved into full-time product roles at RemaTech and VTG-Hub in
-            Kigali.
+            I have been building software since 2020. I began with client projects, then moved into
+            product roles at RemaTech and VTG-Hub.
           </p>
           <p class="animate-in-up mb-6 md:mb-8">
             At VTG-Hub I delivered client platforms, internal dashboards and back-office tools. At
@@ -116,6 +115,25 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="content__block mb-16 md:mb-24">
+    <div class="mb-12">
+      <h3
+        class="relative pb-6 mb-0 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-24 after:h-[0.2rem] after:bg-accent after:rounded-[0.1rem] animate-in-up"
+      >
+        Education
+      </h3>
+    </div>
+
+    <div *ngFor="let item of education" class="py-8 border-b border-stroke-elements">
+      <span
+        class="font-accent text-sm md:text-[1.3rem] font-semibold text-accent block mb-3 animate-in-up"
+        >{{ item.date }}</span
+      >
+      <h5 class="mb-2 text-t-bright animate-in-up text-3xl md:text-4xl">{{ item.title }}</h5>
+      <p class="text-md text-t-medium mb-3 animate-in-up">{{ item.source }}</p>
     </div>
   </div>
 </section>
