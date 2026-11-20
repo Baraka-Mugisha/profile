@@ -6,27 +6,40 @@
   </div>
 
   <div class="content__block grid-block block-grid-large py-20">
-    <div class="mx-auto relative">
-      <div
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-base border border-stroke-elements rounded-xl p-16 md:p-12 z-10 transition-all duration-medium w-[90%]"
-        [class.opacity-100]="showSuccessMessage"
-        [class.visible]="showSuccessMessage"
-        [class.opacity-0]="!showSuccessMessage"
-        [class.invisible]="!showSuccessMessage"
-      >
-        <i class="fa-regular fa-face-smile text-[6rem] md:text-[4rem] text-accent mb-8"></i>
-        <p class="text-2xl md:text-[2rem] font-semibold text-t-bright mb-4">Done!</p>
-        <span class="text-base text-t-medium"
-          >Thanks for your message. I'll get back as soon as possible.</span
-        >
+  <div
+    role="status"
+    aria-live="polite"
+    class="fixed bottom-6 right-6 left-6 md:left-auto md:w-[40rem] z-[10000] transition-all duration-medium"
+    [class.opacity-0]="!showSuccessMessage"
+    [class.translate-y-4]="!showSuccessMessage"
+    [class.pointer-events-none]="!showSuccessMessage"
+  >
+    <div
+      class="flex items-start gap-5 bg-base-tint border border-stroke-elements rounded-xl p-6 shadow-2xl"
+    >
+      <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent">
+        <i class="fa-solid fa-check text-white text-xl" aria-hidden="true"></i>
+      </span>
+      <div class="flex-1 min-w-0">
+        <p class="font-accent text-2xl text-t-bright m-0">Message sent</p>
+        <p class="text-[1.5rem] text-t-medium mt-2 mb-0">Thanks. I'll get back to you soon.</p>
       </div>
+      <button
+        type="button"
+        class="text-t-muted hover:text-t-bright text-xl leading-none p-1"
+        aria-label="Close"
+        (click)="dismissSuccess()"
+      >
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
 
+    <div class="mx-auto relative">
       <form
         class="bg-base transition-opacity duration-medium"
         [formGroup]="contactForm"
         (ngSubmit)="onSubmit()"
-        [class.opacity-30]="showSuccessMessage"
-        [class.pointer-events-none]="showSuccessMessage"
       >
         <div class="container-fluid p-0">
           <div class="row space-x-2k gx-0 justify-between">
@@ -115,6 +128,9 @@
                   *ngIf="isSubmitting"
                 ></i>
               </button>
+          <p *ngIf="submitError" class="text-[1.4rem] text-accent mt-4 mb-0" role="alert">
+            Your message could not be sent. Please try again.
+          </p>
             </div>
           </div>
         </div>

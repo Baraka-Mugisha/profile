@@ -20,6 +20,13 @@ export class ContactComponent implements OnInit {
   contactForm: FormGroup;
   isSubmitting = false;
   showSuccessMessage = false;
+  submitError = false;
+  private successTimer?: ReturnType<typeof setTimeout>;
+
+  dismissSuccess(): void {
+    clearTimeout(this.successTimer);
+    this.showSuccessMessage = false;
+  }
 
   socialLinks: SocialLink[] = sharedSocialLinks;
 
@@ -61,37 +68,26 @@ export class ContactComponent implements OnInit {
   onSubmit(): void {
     if (this.contactForm.valid && !this.isSubmitting) {
       this.isSubmitting = true;
+      this.submitError = false;
 
-      // The Web App URL from your Apps Script deployment
-      const scriptUrl =
-        'https://script.google.com/macros/s/AKfycbyAm53gnv7tMWU_0ZYadf7NDMHPEO80PTzktrdUFZHIhjLMtWR5YcviOusVdUc5oLaY/exec';
-
-      const formData = new URLSearchParams();
-      formData.append('Name', this.contactForm.value.name);
-      formData.append('Email', this.contactForm.value.email);
-      formData.append('Phone', this.contactForm.value.phone);
-      formData.append('Company', this.contactForm.value.company);
-      formData.append('Message', this.contactForm.value.message);
-
-      fetch(scriptUrl, {
+      fetch('/api/contact', {
         method: 'POST',
-        mode: 'no-cors', // Bypasses CORS preflight check
-        cache: 'no-cache',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: formData.toString(),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(this.contactForm.value),
       })
-        .then(() => {
-          // NOTE: With 'no-cors', you won't get a readable response body,
-          // but the data will reach your Google Sheet successfully.
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`Contact request failed: ${response.status}`);
+          }
           this.showSuccessMessage = true;
           this.contactForm.reset();
           this.isSubmitting = false;
-          setTimeout(() => (this.showSuccessMessage = false), 5000);
+          clearTimeout(this.successTimer);
+          this.successTimer = setTimeout(() => this.dismissSuccess(), 4000);
         })
         .catch((error) => {
           console.error('Submission error:', error);
+          this.submitError = true;
           this.isSubmitting = false;
         });
     }
