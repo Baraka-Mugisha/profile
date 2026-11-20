@@ -3,94 +3,87 @@
     <h2 class="h2__title animate-in-up text-3xl md:text-5xl lg:text-6xl">Selected work</h2>
   </div>
 
+  <ng-template #projectCard let-item>
+    <figure
+      class="w-full cursor-pointer transition-transform duration-medium hover:-translate-y-2 grid-item animate-card-2 border border-stroke-elements rounded-m md:rounded-xl overflow-hidden bg-base-tint"
+      (click)="openLightbox(item)"
+    >
+      <div class="relative w-full aspect-square md:aspect-[4/3]">
+        @if (item.image) {
+          <img
+            [src]="item.image"
+            class="w-full h-full absolute inset-0 object-cover transition-transform duration-medium hover:scale-105"
+            [alt]="item.name"
+          />
+        } @else {
+          <div class="absolute inset-0 bg-[#111111] p-6 md:p-8 flex items-start text-white/80 text-[1.4rem] md:text-[1.6rem] leading-snug">
+            {{ item.about }}
+          </div>
+        }
+
+        <div
+          class="absolute inset-x-0 bottom-0 p-3 md:p-4 lg:p-6 bg-gradient-to-t from-black/70 to-transparent text-white"
+        >
+          <h5 class="mb-1 md:mb-2 lg:mb-3 text-lg md:text-2xl lg:text-3xl text-white">
+            {{ item.name }}
+          </h5>
+          <div class="flex flex-wrap gap-2">
+            <span
+              *ngFor="let tag of item.tags"
+              class="rounded-tag text-[0.7rem] md:text-xs lg:text-lg"
+            >
+              {{ tag }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </figure>
+  </ng-template>
+
   <div class="mb-12 md:mb-16 lg:mb-24">
     <div class="w-full px-0">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
-        <figure
-          *ngFor="let item of portfolioItems()"
-          class="w-full cursor-pointer transition-transform duration-medium hover:-translate-y-2 grid-item animate-card-2 border border-stroke-elements rounded-m md:rounded-xl overflow-hidden bg-base-tint"
-          (click)="openLightbox(item)"
-        >
-          <div class="relative w-full aspect-square md:aspect-[4/3]">
-            @if (item.image) {
-              <img
-                [src]="item.image"
-                class="w-full h-full absolute inset-0 object-cover transition-transform duration-medium hover:scale-105"
-                [alt]="item.name"
-              />
-            } @else {
-              <div class="absolute inset-0 bg-[#111111] p-6 md:p-8 flex items-start text-white/80 text-[1.4rem] md:text-[1.6rem] leading-snug">
-                {{ item.about }}
-              </div>
-            }
-
-            <div
-              class="absolute inset-x-0 bottom-0 p-3 md:p-4 lg:p-6 bg-gradient-to-t from-black/70 to-transparent text-white"
-            >
-              <h5 class="mb-1 md:mb-2 lg:mb-3 text-lg md:text-2xl lg:text-3xl text-white">
-                {{ item.name }}
-              </h5>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  *ngFor="let tag of item.tags"
-                  class="rounded-tag text-[0.7rem] md:text-xs lg:text-lg"
-                >
-                  {{ tag }}
-                </span>
-              </div>
-            </div>
-          </div>
-        </figure>
+        <ng-container *ngFor="let item of portfolioItems()">
+          <ng-container *ngTemplateOutlet="projectCard; context: { $implicit: item }" />
+        </ng-container>
       </div>
     </div>
   </div>
+
   @if (moreItems().length) {
     <div class="mt-16 md:mt-24">
       <button
         type="button"
-        class="w-full flex items-center justify-between gap-6 py-6 md:py-8 border-y border-stroke-elements text-left transition-colors duration-medium hover:border-accent"
+        class="w-full flex items-center justify-between gap-6 px-6 py-5 md:px-8 md:py-6 rounded-xl border border-stroke-elements bg-base-tint text-left transition-colors duration-medium hover:border-accent"
         [attr.aria-expanded]="moreOpen()"
         aria-controls="more-work"
         (click)="toggleMore()"
       >
-        <span class="font-accent text-3xl md:text-4xl text-t-bright">More work</span>
-        <span class="flex items-center gap-4 text-[1.4rem] text-t-muted">
-          <span>{{ moreItems().length }} projects</span>
-          <i
-            class="fa-solid fa-chevron-down text-accent transition-transform duration-medium"
-            [class.rotate-180]="moreOpen()"
-            aria-hidden="true"
-          ></i>
+        <span class="font-accent text-2xl md:text-3xl text-t-bright">More work</span>
+        <span class="flex items-center gap-4 md:gap-6">
+          <span class="text-[1.4rem] md:text-[1.6rem] text-t-medium">
+            {{ moreOpen() ? 'Hide' : 'Show' }} {{ moreItems().length }} projects
+          </span>
+          <span
+            class="flex h-11 w-11 md:h-12 md:w-12 items-center justify-center rounded-full bg-accent"
+          >
+            <i
+              class="fa-solid fa-chevron-down text-white transition-transform duration-medium"
+              [class.rotate-180]="moreOpen()"
+              aria-hidden="true"
+            ></i>
+          </span>
         </span>
       </button>
 
       @if (moreOpen()) {
-        <div id="more-work" class="border-b border-stroke-elements animate-in-up">
-          @for (item of moreItems(); track item.name) {
-            <div
-              class="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-3 py-8 border-b last:border-b-0 border-stroke-elements items-start"
-            >
-              <div class="md:col-span-4">
-                <p class="font-accent text-2xl md:text-3xl text-t-bright m-0">{{ item.name }}</p>
-                <p class="text-[1.4rem] text-t-muted mt-2 mb-0">{{ item.stacks?.join(' · ') }}</p>
-              </div>
-              <p class="md:col-span-5 text-[1.6rem] md:text-[1.8rem] text-t-medium m-0">
-                {{ item.summary }}
-              </p>
-              <div class="md:col-span-3 flex flex-wrap gap-6 md:justify-end text-[1.4rem]">
-                @if (item.website) {
-                  <a class="text-link-bold" [href]="item.website" target="_blank" rel="noopener"
-                    >Website</a
-                  >
-                }
-                @if (item.github) {
-                  <a class="text-link-bold" [href]="item.github" target="_blank" rel="noopener"
-                    >GitHub</a
-                  >
-                }
-              </div>
-            </div>
-          }
+        <div
+          id="more-work"
+          class="mt-8 md:mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 animate-in-up"
+        >
+          <ng-container *ngFor="let item of moreItems()">
+            <ng-container *ngTemplateOutlet="projectCard; context: { $implicit: item }" />
+          </ng-container>
         </div>
       }
     </div>
