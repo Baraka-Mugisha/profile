@@ -44,6 +44,57 @@
       </div>
     </div>
   </div>
+  @if (moreItems().length) {
+    <div class="mt-16 md:mt-24">
+      <button
+        type="button"
+        class="w-full flex items-center justify-between gap-6 py-6 md:py-8 border-y border-stroke-elements text-left transition-colors duration-medium hover:border-accent"
+        [attr.aria-expanded]="moreOpen()"
+        aria-controls="more-work"
+        (click)="toggleMore()"
+      >
+        <span class="font-accent text-3xl md:text-4xl text-t-bright">More work</span>
+        <span class="flex items-center gap-4 text-[1.4rem] text-t-muted">
+          <span>{{ moreItems().length }} projects</span>
+          <i
+            class="fa-solid fa-chevron-down text-accent transition-transform duration-medium"
+            [class.rotate-180]="moreOpen()"
+            aria-hidden="true"
+          ></i>
+        </span>
+      </button>
+
+      @if (moreOpen()) {
+        <div id="more-work" class="border-b border-stroke-elements animate-in-up">
+          @for (item of moreItems(); track item.name) {
+            <div
+              class="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-3 py-8 border-b last:border-b-0 border-stroke-elements items-start"
+            >
+              <div class="md:col-span-4">
+                <p class="font-accent text-2xl md:text-3xl text-t-bright m-0">{{ item.name }}</p>
+                <p class="text-[1.4rem] text-t-muted mt-2 mb-0">{{ item.stacks?.join(' · ') }}</p>
+              </div>
+              <p class="md:col-span-5 text-[1.6rem] md:text-[1.8rem] text-t-medium m-0">
+                {{ item.summary }}
+              </p>
+              <div class="md:col-span-3 flex flex-wrap gap-6 md:justify-end text-[1.4rem]">
+                @if (item.website) {
+                  <a class="text-link-bold" [href]="item.website" target="_blank" rel="noopener"
+                    >Website</a
+                  >
+                }
+                @if (item.github) {
+                  <a class="text-link-bold" [href]="item.github" target="_blank" rel="noopener"
+                    >GitHub</a
+                  >
+                }
+              </div>
+            </div>
+          }
+        </div>
+      }
+    </div>
+  }
 </section>
 
 <div

@@ -2,7 +2,7 @@ import { Project } from './../../types';
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, transition, style, animate } from '@angular/animations';
-import { PORTFOLIO_PROJECTS, orderProjects } from '../../data/portfolio';
+import { MORE_WORK, PORTFOLIO_PROJECTS, orderProjects } from '../../data/portfolio';
 
 @Component({
   selector: 'app-portfolio',
@@ -21,7 +21,17 @@ import { PORTFOLIO_PROJECTS, orderProjects } from '../../data/portfolio';
 })
 export class PortfolioComponent {
   selectedItem: Project | null = null;
-  portfolioItems = signal<Project[]>(orderProjects(PORTFOLIO_PROJECTS));
+  portfolioItems = signal<Project[]>(
+    orderProjects(PORTFOLIO_PROJECTS.filter((p) => !MORE_WORK.includes(p.name))),
+  );
+  moreItems = signal<Project[]>(
+    orderProjects(PORTFOLIO_PROJECTS.filter((p) => MORE_WORK.includes(p.name))),
+  );
+  moreOpen = signal(false);
+
+  toggleMore(): void {
+    this.moreOpen.update((open) => !open);
+  }
 
   openLightbox(item: Project): void {
     this.selectedItem = item;

@@ -8,6 +8,7 @@ export const PORTFOLIO_PROJECTS: Project[] = [
     name: 'Huza',
     image: '/img/projects/huza.jpg',
     tags: ['web', 'backend', 'mobile'],
+    summary: 'Dating app for Rwandans living across Europe.',
     stacks: ['Next.js', 'React Native'],
     about:
       "Huza is designed for Rwandans living across Europe and the people who understand that serious chemistry feels better when culture, intention, and conversation style already fit.\n\nMembers can signal how they naturally speak in daily life, travel, and emotionally important moments.",
@@ -120,14 +121,17 @@ export const PORTFOLIO_PROJECTS: Project[] = [
   },
 ];
 
+// Projects shown in the compact "More work" list instead of the main grid.
+export const MORE_WORK = ['Sisonke', 'SellIt', 'Fleetcon', 'Huza'];
+
 // Portfolio display order. Projects not listed here keep their order after these.
 const PROJECT_ORDER = [
   'BoutiqChalets v2',
-  'Quest Africa',
   'Kitech',
-  'Cyviq',
   'Nupta',
   'Ruffi',
+  'Cyviq',
+  'Quest Africa',
   'Fleetcon',
   'Huza',
   'Sisonke',
